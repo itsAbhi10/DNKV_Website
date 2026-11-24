@@ -17,19 +17,14 @@ interface StackCardItemProps {
   progress: MotionValue<number>
 }
 
-function StackCardItem({
-  children,
-  index,
-  total,
-  progress,
-}: StackCardItemProps) {
+function StackCardItem({ children, index, total, progress }: StackCardItemProps) {
   const step = 1 / total
   const start = index * step
   const end = (index + 1) * step
 
   // Scale down earlier cards subtly as subsequent cards stack over them
   const scale = useTransform(progress, [start, end, 1], [1, 1 - (total - index - 1) * 0.035, 0.9])
-  
+
   // Upward translation as card enters
   const y = useTransform(
     progress,
@@ -100,12 +95,7 @@ function DesktopScrollDeck({
     >
       <div className="relative w-full">
         {React.Children.map(children, (child, idx) => (
-          <StackCardItem
-            key={idx}
-            index={idx}
-            total={total}
-            progress={scrollYProgress}
-          >
+          <StackCardItem key={idx} index={idx} total={total} progress={scrollYProgress}>
             {child}
           </StackCardItem>
         ))}
@@ -120,11 +110,7 @@ function DesktopScrollDeck({
  * - Mobile (<1024px, touchscreens) & prefers-reduced-motion: Clean responsive grid with zero jank.
  * - SSR-safe: Pre-rendered in server HTML without hydration mismatch or useScroll ref errors.
  */
-export function ScrollStack({
-  children,
-  className = '',
-  cardClassName = '',
-}: ScrollStackProps) {
+export function ScrollStack({ children, className = '', cardClassName = '' }: ScrollStackProps) {
   const prefersReduced = useReducedMotion()
   const [isDesktop, setIsDesktop] = useState(false)
   const [mounted, setMounted] = useState(false)
@@ -133,8 +119,7 @@ export function ScrollStack({
     setMounted(true)
     const checkDesktop = () => {
       const isTouch =
-        typeof window !== 'undefined' &&
-        ('ontouchstart' in window || navigator.maxTouchPoints > 0)
+        typeof window !== 'undefined' && ('ontouchstart' in window || navigator.maxTouchPoints > 0)
       setIsDesktop(window.innerWidth >= 1024 && !isTouch)
     }
     checkDesktop()

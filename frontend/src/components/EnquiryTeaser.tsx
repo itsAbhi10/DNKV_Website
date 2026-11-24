@@ -18,7 +18,10 @@ export async function EnquiryTeaser({ siteSettings: propSiteSettings }: EnquiryT
   const location = siteSettings?.location || defaultSiteSettings.location
 
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-br from-amber-500 via-amber-600 to-amber-700 text-slate-950 relative overflow-hidden" aria-label="Admissions Call to Action">
+    <section
+      className="py-16 md:py-24 bg-gradient-to-br from-amber-500 via-amber-600 to-amber-700 text-slate-950 relative overflow-hidden"
+      aria-label="Admissions Call to Action"
+    >
       {/* Decorative SVG background shapes */}
       <div className="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 rounded-full bg-white/10 blur-2xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-black/10 blur-2xl pointer-events-none" />
@@ -37,7 +40,9 @@ export async function EnquiryTeaser({ siteSettings: propSiteSettings }: EnquiryT
               </h2>
 
               <p className="text-slate-300 text-base md:text-lg mb-8 leading-relaxed">
-                Admissions are currently underway for Pre-Primary (Nursery, LKG, UKG) through Class X. Give your child the foundation of quality modern education, moral discipline, and dedicated mentorship.
+                Admissions are currently underway for Pre-Primary (Nursery, LKG, UKG) through Class
+                X. Give your child the foundation of quality modern education, moral discipline, and
+                dedicated mentorship.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-slate-200 mb-8">
@@ -86,7 +91,8 @@ export async function EnquiryTeaser({ siteSettings: propSiteSettings }: EnquiryT
                 </span>
                 <h3 className="text-xl font-bold text-white mb-2">Visit Our Campus</h3>
                 <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                  Parents and guardians are warmly welcomed to visit our campus, inspect classrooms and laboratories, and interact with the admissions counselor.
+                  Parents and guardians are warmly welcomed to visit our campus, inspect classrooms
+                  and laboratories, and interact with the admissions counselor.
                 </p>
               </div>
 

@@ -1,14 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import {
-  ChevronRight,
-  Download,
-  HelpCircle,
-  Play,
-  User,
-  CheckCircle,
-  FileText,
-} from 'lucide-react'
+import { ChevronRight, Download, HelpCircle, Play, User, CheckCircle, FileText } from 'lucide-react'
 
 interface BlockRendererProps {
   blocks?: any[]
@@ -38,11 +30,7 @@ export function BlockRenderer({ blocks }: BlockRendererProps) {
                 {block.heading && (
                   <h3 className="text-2xl font-bold text-slate-900 mb-6">{block.heading}</h3>
                 )}
-                <div
-                  className={`grid grid-cols-1 md:grid-cols-${
-                    block.columns || '3'
-                  } gap-6`}
-                >
+                <div className={`grid grid-cols-1 md:grid-cols-${block.columns || '3'} gap-6`}>
                   {block.cards?.map((card: any, cIdx: number) => (
                     <div
                       key={cIdx}

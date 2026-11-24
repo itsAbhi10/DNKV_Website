@@ -107,21 +107,14 @@ export default async function HomePage() {
       <CampusVideoTour />
 
       {/* 6. Notices and Latest News */}
-      {vis.showNoticesAndNews && (
-        <NoticesAndNews notices={notices} news={news} />
-      )}
+      {vis.showNoticesAndNews && <NoticesAndNews notices={notices} news={news} />}
 
       {/* 7. Campus Infrastructure Facilities */}
-      {vis.showFacilitiesStrip && (
-        <FacilitiesStrip facilities={facilities} />
-      )}
+      {vis.showFacilitiesStrip && <FacilitiesStrip facilities={facilities} />}
 
       {/* 8. Board Examination Results & Stats */}
       {vis.showResults && (
-        <ResultsHighlight
-          stats={homepage.resultsBlock?.stats}
-          results={results}
-        />
+        <ResultsHighlight stats={homepage.resultsBlock?.stats} results={results} />
       )}
 
       {/* 9. Campus Life Photo Gallery Preview */}

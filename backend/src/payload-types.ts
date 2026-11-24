@@ -59,91 +59,92 @@ export type SupportedTimezones =
   | 'Pacific/Guam'
   | 'Pacific/Noumea'
   | 'Pacific/Auckland'
-  | 'Pacific/Fiji';
+  | 'Pacific/Fiji'
 
 export interface Config {
   auth: {
-    users: UserAuthOperations;
-  };
-  blocks: {};
+    users: UserAuthOperations
+  }
+  blocks: {}
   collections: {
-    pages: Page;
-    notices: Notice;
-    news: News;
-    'gallery-albums': GalleryAlbum;
-    staff: Staff;
-    facilities: Facility;
-    results: Result;
-    enquiries: Enquiry;
-    redirects: Redirect;
-    media: Media;
-    users: User;
-    'payload-kv': PayloadKv;
-    'payload-locked-documents': PayloadLockedDocument;
-    'payload-preferences': PayloadPreference;
-    'payload-migrations': PayloadMigration;
-  };
-  collectionsJoins: {};
+    pages: Page
+    notices: Notice
+    news: News
+    'gallery-albums': GalleryAlbum
+    staff: Staff
+    facilities: Facility
+    results: Result
+    enquiries: Enquiry
+    redirects: Redirect
+    media: Media
+    users: User
+    'payload-kv': PayloadKv
+    'payload-locked-documents': PayloadLockedDocument
+    'payload-preferences': PayloadPreference
+    'payload-migrations': PayloadMigration
+  }
+  collectionsJoins: {}
   collectionsSelect: {
-    pages: PagesSelect<false> | PagesSelect<true>;
-    notices: NoticesSelect<false> | NoticesSelect<true>;
-    news: NewsSelect<false> | NewsSelect<true>;
-    'gallery-albums': GalleryAlbumsSelect<false> | GalleryAlbumsSelect<true>;
-    staff: StaffSelect<false> | StaffSelect<true>;
-    facilities: FacilitiesSelect<false> | FacilitiesSelect<true>;
-    results: ResultsSelect<false> | ResultsSelect<true>;
-    enquiries: EnquiriesSelect<false> | EnquiriesSelect<true>;
-    redirects: RedirectsSelect<false> | RedirectsSelect<true>;
-    media: MediaSelect<false> | MediaSelect<true>;
-    users: UsersSelect<false> | UsersSelect<true>;
-    'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
-    'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
-    'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
-    'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
-  };
+    pages: PagesSelect<false> | PagesSelect<true>
+    notices: NoticesSelect<false> | NoticesSelect<true>
+    news: NewsSelect<false> | NewsSelect<true>
+    'gallery-albums': GalleryAlbumsSelect<false> | GalleryAlbumsSelect<true>
+    staff: StaffSelect<false> | StaffSelect<true>
+    facilities: FacilitiesSelect<false> | FacilitiesSelect<true>
+    results: ResultsSelect<false> | ResultsSelect<true>
+    enquiries: EnquiriesSelect<false> | EnquiriesSelect<true>
+    redirects: RedirectsSelect<false> | RedirectsSelect<true>
+    media: MediaSelect<false> | MediaSelect<true>
+    users: UsersSelect<false> | UsersSelect<true>
+    'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>
+    'payload-locked-documents':
+      PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>
+    'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>
+    'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>
+  }
   db: {
-    defaultIDType: number;
-  };
-  fallbackLocale: ('false' | 'none' | 'null') | false | null | ('en' | 'mr') | ('en' | 'mr')[];
+    defaultIDType: number
+  }
+  fallbackLocale: ('false' | 'none' | 'null') | false | null | ('en' | 'mr') | ('en' | 'mr')[]
   globals: {
-    'site-settings': SiteSetting;
-    navigation: Navigation;
-    footer: Footer;
-    homepage: Homepage;
-  };
+    'site-settings': SiteSetting
+    navigation: Navigation
+    footer: Footer
+    homepage: Homepage
+  }
   globalsSelect: {
-    'site-settings': SiteSettingsSelect<false> | SiteSettingsSelect<true>;
-    navigation: NavigationSelect<false> | NavigationSelect<true>;
-    footer: FooterSelect<false> | FooterSelect<true>;
-    homepage: HomepageSelect<false> | HomepageSelect<true>;
-  };
-  locale: 'en' | 'mr';
+    'site-settings': SiteSettingsSelect<false> | SiteSettingsSelect<true>
+    navigation: NavigationSelect<false> | NavigationSelect<true>
+    footer: FooterSelect<false> | FooterSelect<true>
+    homepage: HomepageSelect<false> | HomepageSelect<true>
+  }
+  locale: 'en' | 'mr'
   widgets: {
-    collections: CollectionsWidget;
-  };
-  user: User;
+    collections: CollectionsWidget
+  }
+  user: User
   jobs: {
-    tasks: unknown;
-    workflows: unknown;
-  };
+    tasks: unknown
+    workflows: unknown
+  }
 }
 export interface UserAuthOperations {
   forgotPassword: {
-    email: string;
-    password: string;
-  };
+    email: string
+    password: string
+  }
   login: {
-    email: string;
-    password: string;
-  };
+    email: string
+    password: string
+  }
   registerFirstUser: {
-    email: string;
-    password: string;
-  };
+    email: string
+    password: string
+  }
   unlock: {
-    email: string;
-    password: string;
-  };
+    email: string
+    password: string
+  }
 }
 /**
  * Dynamic block-based pages (About, Curriculum, Student Life, Admissions, Contact, etc.).
@@ -152,140 +153,140 @@ export interface UserAuthOperations {
  * via the `definition` "pages".
  */
 export interface Page {
-  id: number;
-  title: string;
+  id: number
+  title: string
   /**
    * Clean path without leading slash (e.g. "academics" or "about/principals-desk").
    */
-  slug: string;
-  subtitle?: string | null;
-  bannerImage?: (number | null) | Media;
+  slug: string
+  subtitle?: string | null
+  bannerImage?: (number | null) | Media
   layout?:
     | (
         | {
             content: {
               root: {
-                type: string;
+                type: string
                 children: {
-                  type: any;
-                  version: number;
-                  [k: string]: unknown;
-                }[];
-                direction: ('ltr' | 'rtl') | null;
-                format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-                indent: number;
-                version: number;
-              };
-              [k: string]: unknown;
-            };
-            id?: string | null;
-            blockName?: string | null;
-            blockType: 'richText';
+                  type: any
+                  version: number
+                  [k: string]: unknown
+                }[]
+                direction: ('ltr' | 'rtl') | null
+                format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | ''
+                indent: number
+                version: number
+              }
+              [k: string]: unknown
+            }
+            id?: string | null
+            blockName?: string | null
+            blockType: 'richText'
           }
         | {
-            heading?: string | null;
-            columns?: ('2' | '3' | '4') | null;
+            heading?: string | null
+            columns?: ('2' | '3' | '4') | null
             cards: {
-              icon?: string | null;
-              title: string;
-              description: string;
-              linkUrl?: string | null;
-              linkLabel?: string | null;
-              id?: string | null;
-            }[];
-            id?: string | null;
-            blockName?: string | null;
-            blockType: 'cardGrid';
+              icon?: string | null
+              title: string
+              description: string
+              linkUrl?: string | null
+              linkLabel?: string | null
+              id?: string | null
+            }[]
+            id?: string | null
+            blockName?: string | null
+            blockType: 'cardGrid'
           }
         | {
-            heading?: string | null;
+            heading?: string | null
             content?: {
               root: {
-                type: string;
+                type: string
                 children: {
-                  type: any;
-                  version: number;
-                  [k: string]: unknown;
-                }[];
-                direction: ('ltr' | 'rtl') | null;
-                format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-                indent: number;
-                version: number;
-              };
-              [k: string]: unknown;
-            } | null;
-            image: number | Media;
-            imagePosition?: ('left' | 'right') | null;
-            id?: string | null;
-            blockName?: string | null;
-            blockType: 'imageText';
+                  type: any
+                  version: number
+                  [k: string]: unknown
+                }[]
+                direction: ('ltr' | 'rtl') | null
+                format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | ''
+                indent: number
+                version: number
+              }
+              [k: string]: unknown
+            } | null
+            image: number | Media
+            imagePosition?: ('left' | 'right') | null
+            id?: string | null
+            blockName?: string | null
+            blockType: 'imageText'
           }
         | {
-            heading?: string | null;
-            departmentFilter?: ('all' | 'leadership' | 'secondary' | 'primary') | null;
-            id?: string | null;
-            blockName?: string | null;
-            blockType: 'staffGrid';
+            heading?: string | null
+            departmentFilter?: ('all' | 'leadership' | 'secondary' | 'primary') | null
+            id?: string | null
+            blockName?: string | null
+            blockType: 'staffGrid'
           }
         | {
-            heading?: string | null;
-            selectedAlbum?: (number | null) | GalleryAlbum;
-            id?: string | null;
-            blockName?: string | null;
-            blockType: 'galleryBlock';
+            heading?: string | null
+            selectedAlbum?: (number | null) | GalleryAlbum
+            id?: string | null
+            blockName?: string | null
+            blockType: 'galleryBlock'
           }
         | {
-            heading?: string | null;
+            heading?: string | null
             items: {
-              question: string;
-              answer: string;
-              id?: string | null;
-            }[];
-            id?: string | null;
-            blockName?: string | null;
-            blockType: 'faqBlock';
+              question: string
+              answer: string
+              id?: string | null
+            }[]
+            id?: string | null
+            blockName?: string | null
+            blockType: 'faqBlock'
           }
         | {
-            heading?: string | null;
+            heading?: string | null
             files?:
               | {
-                  title: string;
-                  description?: string | null;
-                  file: number | Media;
-                  id?: string | null;
+                  title: string
+                  description?: string | null
+                  file: number | Media
+                  id?: string | null
                 }[]
-              | null;
-            id?: string | null;
-            blockName?: string | null;
-            blockType: 'downloadsBlock';
+              | null
+            id?: string | null
+            blockName?: string | null
+            blockType: 'downloadsBlock'
           }
         | {
-            formType?: 'enquiry' | null;
-            heading?: string | null;
-            description?: string | null;
-            id?: string | null;
-            blockName?: string | null;
-            blockType: 'formBlock';
+            formType?: 'enquiry' | null
+            heading?: string | null
+            description?: string | null
+            id?: string | null
+            blockName?: string | null
+            blockType: 'formBlock'
           }
         | {
-            title?: string | null;
-            videoFile?: (number | null) | Media;
-            youtubeUrl?: string | null;
-            caption?: string | null;
-            id?: string | null;
-            blockName?: string | null;
-            blockType: 'videoBlock';
+            title?: string | null
+            videoFile?: (number | null) | Media
+            youtubeUrl?: string | null
+            caption?: string | null
+            id?: string | null
+            blockName?: string | null
+            blockType: 'videoBlock'
           }
       )[]
-    | null;
+    | null
   meta?: {
-    title?: string | null;
-    description?: string | null;
-    ogImage?: (number | null) | Media;
-  };
-  updatedAt: string;
-  createdAt: string;
-  _status?: ('draft' | 'published') | null;
+    title?: string | null
+    description?: string | null
+    ogImage?: (number | null) | Media
+  }
+  updatedAt: string
+  createdAt: string
+  _status?: ('draft' | 'published') | null
 }
 /**
  * School photos, document PDFs, and video assets. Alt text is mandatory for accessibility (WCAG 2.2 AA).
@@ -294,60 +295,60 @@ export interface Page {
  * via the `definition` "media".
  */
 export interface Media {
-  id: number;
+  id: number
   /**
    * Plain English / Marathi description of what is in this image. Required for screen readers (e.g., "Students participating in annual science exhibition").
    */
-  alt: string;
+  alt: string
   /**
    * Short caption shown below the photo in galleries and articles.
    */
-  caption?: string | null;
-  updatedAt: string;
-  createdAt: string;
-  url?: string | null;
-  thumbnailURL?: string | null;
-  filename?: string | null;
-  mimeType?: string | null;
-  filesize?: number | null;
-  width?: number | null;
-  height?: number | null;
-  focalX?: number | null;
-  focalY?: number | null;
+  caption?: string | null
+  updatedAt: string
+  createdAt: string
+  url?: string | null
+  thumbnailURL?: string | null
+  filename?: string | null
+  mimeType?: string | null
+  filesize?: number | null
+  width?: number | null
+  height?: number | null
+  focalX?: number | null
+  focalY?: number | null
   sizes?: {
     thumbnail?: {
-      url?: string | null;
-      width?: number | null;
-      height?: number | null;
-      mimeType?: string | null;
-      filesize?: number | null;
-      filename?: string | null;
-    };
+      url?: string | null
+      width?: number | null
+      height?: number | null
+      mimeType?: string | null
+      filesize?: number | null
+      filename?: string | null
+    }
     card?: {
-      url?: string | null;
-      width?: number | null;
-      height?: number | null;
-      mimeType?: string | null;
-      filesize?: number | null;
-      filename?: string | null;
-    };
+      url?: string | null
+      width?: number | null
+      height?: number | null
+      mimeType?: string | null
+      filesize?: number | null
+      filename?: string | null
+    }
     wide?: {
-      url?: string | null;
-      width?: number | null;
-      height?: number | null;
-      mimeType?: string | null;
-      filesize?: number | null;
-      filename?: string | null;
-    };
+      url?: string | null
+      width?: number | null
+      height?: number | null
+      mimeType?: string | null
+      filesize?: number | null
+      filename?: string | null
+    }
     hero?: {
-      url?: string | null;
-      width?: number | null;
-      height?: number | null;
-      mimeType?: string | null;
-      filesize?: number | null;
-      filename?: string | null;
-    };
-  };
+      url?: string | null
+      width?: number | null
+      height?: number | null
+      mimeType?: string | null
+      filesize?: number | null
+      filename?: string | null
+    }
+  }
 }
 /**
  * Photo albums from campus life, annual functions, sports day, and student exhibitions.
@@ -356,24 +357,24 @@ export interface Media {
  * via the `definition` "gallery-albums".
  */
 export interface GalleryAlbum {
-  id: number;
-  title: string;
-  description?: string | null;
+  id: number
+  title: string
+  description?: string | null
   /**
    * Selected highlight photo representing this album.
    */
-  coverImage?: (number | null) | Media;
-  eventDate?: string | null;
-  category: 'campus' | 'sports' | 'arts' | 'celebrations' | 'academic';
+  coverImage?: (number | null) | Media
+  eventDate?: string | null
+  category: 'campus' | 'sports' | 'arts' | 'celebrations' | 'academic'
   photos?:
     | {
-        image: number | Media;
-        caption?: string | null;
-        id?: string | null;
+        image: number | Media
+        caption?: string | null
+        id?: string | null
       }[]
-    | null;
-  updatedAt: string;
-  createdAt: string;
+    | null
+  updatedAt: string
+  createdAt: string
 }
 /**
  * School circulars, exam dates, fee deadlines, and official announcements. Notices auto-retire past their expiry date.
@@ -382,35 +383,35 @@ export interface GalleryAlbum {
  * via the `definition` "notices".
  */
 export interface Notice {
-  id: number;
+  id: number
   /**
    * Clear, concise headline displayed on the notice board and homepage.
    */
-  title: string;
+  title: string
   /**
    * Publication date shown to parents and students.
    */
-  date: string;
-  category: 'academic' | 'admissions' | 'examinations' | 'events' | 'urgent' | 'general';
+  date: string
+  category: 'academic' | 'admissions' | 'examinations' | 'events' | 'urgent' | 'general'
   /**
    * Upload the scanned official letterhead PDF or circular image.
    */
-  file?: (number | null) | Media;
+  file?: (number | null) | Media
   /**
    * Link to external government portals, registration forms, or syllabus links.
    */
-  externalLink?: string | null;
+  externalLink?: string | null
   /**
    * Notice will automatically be hidden from the active board after this date.
    */
-  expiryDate?: string | null;
+  expiryDate?: string | null
   /**
    * Pinned notices appear prominently at the top of the homepage and notice board.
    */
-  isPinned?: boolean | null;
-  updatedAt: string;
-  createdAt: string;
-  _status?: ('draft' | 'published') | null;
+  isPinned?: boolean | null
+  updatedAt: string
+  createdAt: string
+  _status?: ('draft' | 'published') | null
 }
 /**
  * School news articles, student achievements, event recaps, and stories from campus.
@@ -419,42 +420,42 @@ export interface Notice {
  * via the `definition` "news".
  */
 export interface News {
-  id: number;
+  id: number
   /**
    * Compelling headline displayed on the homepage news carousel and inner pages.
    */
-  title: string;
-  date: string;
-  category: 'academics' | 'sports' | 'cultural' | 'achievements' | 'community';
+  title: string
+  date: string
+  category: 'academics' | 'sports' | 'cultural' | 'achievements' | 'community'
   /**
    * Landscape photo (16:9 ratio, min 1200x675 px recommended).
    */
-  coverImage?: (number | null) | Media;
+  coverImage?: (number | null) | Media
   /**
    * 1-2 sentence preview shown on homepage cards and search results.
    */
-  summary: string;
+  summary: string
   /**
    * Full write-up detailing the event or achievement.
    */
   content?: {
     root: {
-      type: string;
+      type: string
       children: {
-        type: any;
-        version: number;
-        [k: string]: unknown;
-      }[];
-      direction: ('ltr' | 'rtl') | null;
-      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-      indent: number;
-      version: number;
-    };
-    [k: string]: unknown;
-  } | null;
-  updatedAt: string;
-  createdAt: string;
-  _status?: ('draft' | 'published') | null;
+        type: any
+        version: number
+        [k: string]: unknown
+      }[]
+      direction: ('ltr' | 'rtl') | null
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | ''
+      indent: number
+      version: number
+    }
+    [k: string]: unknown
+  } | null
+  updatedAt: string
+  createdAt: string
+  _status?: ('draft' | 'published') | null
 }
 /**
  * Faculty, school leadership, and administrative staff profiles.
@@ -463,23 +464,23 @@ export interface News {
  * via the `definition` "staff".
  */
 export interface Staff {
-  id: number;
-  name: string;
-  designation: string;
-  department: 'leadership' | 'secondary' | 'primary' | 'pre_primary' | 'sports' | 'administrative';
-  qualification?: string | null;
-  experienceYears?: number | null;
+  id: number
+  name: string
+  designation: string
+  department: 'leadership' | 'secondary' | 'primary' | 'pre_primary' | 'sports' | 'administrative'
+  qualification?: string | null
+  experienceYears?: number | null
   /**
    * Professional portrait photo (3:4 ratio recommended).
    */
-  photo?: (number | null) | Media;
-  bio?: string | null;
+  photo?: (number | null) | Media
+  bio?: string | null
   /**
    * Lower numbers display first (e.g. 1 for Principal, 2 for Vice Principal).
    */
-  order?: number | null;
-  updatedAt: string;
-  createdAt: string;
+  order?: number | null
+  updatedAt: string
+  createdAt: string
 }
 /**
  * School infrastructure, laboratories, playgrounds, digital classrooms, and libraries.
@@ -488,26 +489,26 @@ export interface Staff {
  * via the `definition` "facilities".
  */
 export interface Facility {
-  id: number;
-  title: string;
-  description: string;
-  category: 'academic' | 'science_tech' | 'library' | 'sports' | 'safety' | 'transport';
+  id: number
+  title: string
+  description: string
+  category: 'academic' | 'science_tech' | 'library' | 'sports' | 'safety' | 'transport'
   /**
    * Landscape photo (16:9 ratio recommended).
    */
-  image?: (number | null) | Media;
+  image?: (number | null) | Media
   highlights?:
     | {
-        text: string;
-        id?: string | null;
+        text: string
+        id?: string | null
       }[]
-    | null;
+    | null
   /**
    * Lower numbers display first.
    */
-  order?: number | null;
-  updatedAt: string;
-  createdAt: string;
+  order?: number | null
+  updatedAt: string
+  createdAt: string
 }
 /**
  * Academic board exam results and student merit toppers. Privacy note: Parental consent flag is strictly mandatory before displaying student records under India DPDP Act 2023.
@@ -516,27 +517,27 @@ export interface Facility {
  * via the `definition` "results".
  */
 export interface Result {
-  id: number;
-  academicYear: string;
-  className: 'Class X' | 'Class XII' | 'Class VIII' | 'Class V';
-  passPercentage: number;
-  totalStudents?: number | null;
-  distinctionCount?: number | null;
+  id: number
+  academicYear: string
+  className: 'Class X' | 'Class XII' | 'Class VIII' | 'Class V'
+  passPercentage: number
+  totalStudents?: number | null
+  distinctionCount?: number | null
   toppers?:
     | {
-        studentName: string;
-        percentage: number;
-        rank?: string | null;
-        photo?: (number | null) | Media;
+        studentName: string
+        percentage: number
+        rank?: string | null
+        photo?: (number | null) | Media
         /**
          * MANDATORY: You must obtain and file written parental consent prior to displaying a minor student's name or photo on the public website.
          */
-        parentalConsentGiven: boolean;
-        id?: string | null;
+        parentalConsentGiven: boolean
+        id?: string | null
       }[]
-    | null;
-  updatedAt: string;
-  createdAt: string;
+    | null
+  updatedAt: string
+  createdAt: string
 }
 /**
  * Admissions and general contact inquiries submitted via the website enquiry form. Read-only for editors; admins can archive.
@@ -545,11 +546,11 @@ export interface Result {
  * via the `definition` "enquiries".
  */
 export interface Enquiry {
-  id: number;
-  fullName: string;
-  parentName: string;
-  mobile: string;
-  email?: string | null;
+  id: number
+  fullName: string
+  parentName: string
+  mobile: string
+  email?: string | null
   classApplyingFor?:
     | (
         | 'Nursery'
@@ -567,23 +568,23 @@ export interface Enquiry {
         | 'Class 10'
         | 'General Inquiry (Not class specific)'
       )
-    | null;
-  purpose: 'admission' | 'general';
-  message: string;
+    | null
+  purpose: 'admission' | 'general'
+  message: string
   /**
    * Verified that applicant agreed to school communication under India DPDP Rules.
    */
-  consentGiven: boolean;
+  consentGiven: boolean
   /**
    * Update the follow-up progress for this inquiry.
    */
-  status?: ('new' | 'in_review' | 'contacted' | 'admitted' | 'closed') | null;
+  status?: ('new' | 'in_review' | 'contacted' | 'admitted' | 'closed') | null
   /**
    * Staff notes regarding phone calls, document verification, or admission status.
    */
-  internalNotes?: string | null;
-  updatedAt: string;
-  createdAt: string;
+  internalNotes?: string | null
+  updatedAt: string
+  createdAt: string
 }
 /**
  * 301 permanent redirects for legacy URLs (e.g. /principle_desk, /acadmics, /gallary). Admin only.
@@ -592,21 +593,21 @@ export interface Enquiry {
  * via the `definition` "redirects".
  */
 export interface Redirect {
-  id: number;
+  id: number
   /**
    * The old URL path to redirect from (must start with /).
    */
-  fromPath: string;
+  fromPath: string
   /**
    * The correct clean URL path to redirect visitors to.
    */
-  toPath: string;
+  toPath: string
   /**
    * Use 301 for permanent site migrations so search engines transfer rankings.
    */
-  statusCode: '301' | '302';
-  updatedAt: string;
-  createdAt: string;
+  statusCode: '301' | '302'
+  updatedAt: string
+  createdAt: string
 }
 /**
  * System administrators and content editors for Dr. Netaji Karale Vidyalaya.
@@ -615,533 +616,533 @@ export interface Redirect {
  * via the `definition` "users".
  */
 export interface User {
-  id: number;
+  id: number
   /**
    * Staff member name used in audit trails and system logs.
    */
-  name: string;
+  name: string
   /**
    * Admins have complete control. Editors can only create and publish educational content.
    */
-  role: 'admin' | 'editor';
-  updatedAt: string;
-  createdAt: string;
-  email: string;
-  resetPasswordToken?: string | null;
-  resetPasswordExpiration?: string | null;
-  salt?: string | null;
-  hash?: string | null;
-  resetPasswordRequestedAt?: string | null;
-  loginAttempts?: number | null;
-  lockUntil?: string | null;
+  role: 'admin' | 'editor'
+  updatedAt: string
+  createdAt: string
+  email: string
+  resetPasswordToken?: string | null
+  resetPasswordExpiration?: string | null
+  salt?: string | null
+  hash?: string | null
+  resetPasswordRequestedAt?: string | null
+  loginAttempts?: number | null
+  lockUntil?: string | null
   sessions?:
     | {
-        id: string;
-        createdAt?: string | null;
-        expiresAt: string;
+        id: string
+        createdAt?: string | null
+        expiresAt: string
       }[]
-    | null;
-  password?: string | null;
-  collection: 'users';
+    | null
+  password?: string | null
+  collection: 'users'
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-kv".
  */
 export interface PayloadKv {
-  id: number;
-  key: string;
+  id: number
+  key: string
   data:
     | {
-        [k: string]: unknown;
+        [k: string]: unknown
       }
     | unknown[]
     | string
     | number
     | boolean
-    | null;
+    | null
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-locked-documents".
  */
 export interface PayloadLockedDocument {
-  id: number;
+  id: number
   document?:
     | ({
-        relationTo: 'pages';
-        value: number | Page;
+        relationTo: 'pages'
+        value: number | Page
       } | null)
     | ({
-        relationTo: 'notices';
-        value: number | Notice;
+        relationTo: 'notices'
+        value: number | Notice
       } | null)
     | ({
-        relationTo: 'news';
-        value: number | News;
+        relationTo: 'news'
+        value: number | News
       } | null)
     | ({
-        relationTo: 'gallery-albums';
-        value: number | GalleryAlbum;
+        relationTo: 'gallery-albums'
+        value: number | GalleryAlbum
       } | null)
     | ({
-        relationTo: 'staff';
-        value: number | Staff;
+        relationTo: 'staff'
+        value: number | Staff
       } | null)
     | ({
-        relationTo: 'facilities';
-        value: number | Facility;
+        relationTo: 'facilities'
+        value: number | Facility
       } | null)
     | ({
-        relationTo: 'results';
-        value: number | Result;
+        relationTo: 'results'
+        value: number | Result
       } | null)
     | ({
-        relationTo: 'enquiries';
-        value: number | Enquiry;
+        relationTo: 'enquiries'
+        value: number | Enquiry
       } | null)
     | ({
-        relationTo: 'redirects';
-        value: number | Redirect;
+        relationTo: 'redirects'
+        value: number | Redirect
       } | null)
     | ({
-        relationTo: 'media';
-        value: number | Media;
+        relationTo: 'media'
+        value: number | Media
       } | null)
     | ({
-        relationTo: 'users';
-        value: number | User;
-      } | null);
-  globalSlug?: string | null;
+        relationTo: 'users'
+        value: number | User
+      } | null)
+  globalSlug?: string | null
   user: {
-    relationTo: 'users';
-    value: number | User;
-  };
-  updatedAt: string;
-  createdAt: string;
+    relationTo: 'users'
+    value: number | User
+  }
+  updatedAt: string
+  createdAt: string
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-preferences".
  */
 export interface PayloadPreference {
-  id: number;
+  id: number
   user: {
-    relationTo: 'users';
-    value: number | User;
-  };
-  key?: string | null;
+    relationTo: 'users'
+    value: number | User
+  }
+  key?: string | null
   value?:
     | {
-        [k: string]: unknown;
+        [k: string]: unknown
       }
     | unknown[]
     | string
     | number
     | boolean
-    | null;
-  updatedAt: string;
-  createdAt: string;
+    | null
+  updatedAt: string
+  createdAt: string
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-migrations".
  */
 export interface PayloadMigration {
-  id: number;
-  name?: string | null;
-  batch?: number | null;
-  updatedAt: string;
-  createdAt: string;
+  id: number
+  name?: string | null
+  batch?: number | null
+  updatedAt: string
+  createdAt: string
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "pages_select".
  */
 export interface PagesSelect<T extends boolean = true> {
-  title?: T;
-  slug?: T;
-  subtitle?: T;
-  bannerImage?: T;
+  title?: T
+  slug?: T
+  subtitle?: T
+  bannerImage?: T
   layout?:
     | T
     | {
         richText?:
           | T
           | {
-              content?: T;
-              id?: T;
-              blockName?: T;
-            };
+              content?: T
+              id?: T
+              blockName?: T
+            }
         cardGrid?:
           | T
           | {
-              heading?: T;
-              columns?: T;
+              heading?: T
+              columns?: T
               cards?:
                 | T
                 | {
-                    icon?: T;
-                    title?: T;
-                    description?: T;
-                    linkUrl?: T;
-                    linkLabel?: T;
-                    id?: T;
-                  };
-              id?: T;
-              blockName?: T;
-            };
+                    icon?: T
+                    title?: T
+                    description?: T
+                    linkUrl?: T
+                    linkLabel?: T
+                    id?: T
+                  }
+              id?: T
+              blockName?: T
+            }
         imageText?:
           | T
           | {
-              heading?: T;
-              content?: T;
-              image?: T;
-              imagePosition?: T;
-              id?: T;
-              blockName?: T;
-            };
+              heading?: T
+              content?: T
+              image?: T
+              imagePosition?: T
+              id?: T
+              blockName?: T
+            }
         staffGrid?:
           | T
           | {
-              heading?: T;
-              departmentFilter?: T;
-              id?: T;
-              blockName?: T;
-            };
+              heading?: T
+              departmentFilter?: T
+              id?: T
+              blockName?: T
+            }
         galleryBlock?:
           | T
           | {
-              heading?: T;
-              selectedAlbum?: T;
-              id?: T;
-              blockName?: T;
-            };
+              heading?: T
+              selectedAlbum?: T
+              id?: T
+              blockName?: T
+            }
         faqBlock?:
           | T
           | {
-              heading?: T;
+              heading?: T
               items?:
                 | T
                 | {
-                    question?: T;
-                    answer?: T;
-                    id?: T;
-                  };
-              id?: T;
-              blockName?: T;
-            };
+                    question?: T
+                    answer?: T
+                    id?: T
+                  }
+              id?: T
+              blockName?: T
+            }
         downloadsBlock?:
           | T
           | {
-              heading?: T;
+              heading?: T
               files?:
                 | T
                 | {
-                    title?: T;
-                    description?: T;
-                    file?: T;
-                    id?: T;
-                  };
-              id?: T;
-              blockName?: T;
-            };
+                    title?: T
+                    description?: T
+                    file?: T
+                    id?: T
+                  }
+              id?: T
+              blockName?: T
+            }
         formBlock?:
           | T
           | {
-              formType?: T;
-              heading?: T;
-              description?: T;
-              id?: T;
-              blockName?: T;
-            };
+              formType?: T
+              heading?: T
+              description?: T
+              id?: T
+              blockName?: T
+            }
         videoBlock?:
           | T
           | {
-              title?: T;
-              videoFile?: T;
-              youtubeUrl?: T;
-              caption?: T;
-              id?: T;
-              blockName?: T;
-            };
-      };
+              title?: T
+              videoFile?: T
+              youtubeUrl?: T
+              caption?: T
+              id?: T
+              blockName?: T
+            }
+      }
   meta?:
     | T
     | {
-        title?: T;
-        description?: T;
-        ogImage?: T;
-      };
-  updatedAt?: T;
-  createdAt?: T;
-  _status?: T;
+        title?: T
+        description?: T
+        ogImage?: T
+      }
+  updatedAt?: T
+  createdAt?: T
+  _status?: T
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "notices_select".
  */
 export interface NoticesSelect<T extends boolean = true> {
-  title?: T;
-  date?: T;
-  category?: T;
-  file?: T;
-  externalLink?: T;
-  expiryDate?: T;
-  isPinned?: T;
-  updatedAt?: T;
-  createdAt?: T;
-  _status?: T;
+  title?: T
+  date?: T
+  category?: T
+  file?: T
+  externalLink?: T
+  expiryDate?: T
+  isPinned?: T
+  updatedAt?: T
+  createdAt?: T
+  _status?: T
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "news_select".
  */
 export interface NewsSelect<T extends boolean = true> {
-  title?: T;
-  date?: T;
-  category?: T;
-  coverImage?: T;
-  summary?: T;
-  content?: T;
-  updatedAt?: T;
-  createdAt?: T;
-  _status?: T;
+  title?: T
+  date?: T
+  category?: T
+  coverImage?: T
+  summary?: T
+  content?: T
+  updatedAt?: T
+  createdAt?: T
+  _status?: T
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "gallery-albums_select".
  */
 export interface GalleryAlbumsSelect<T extends boolean = true> {
-  title?: T;
-  description?: T;
-  coverImage?: T;
-  eventDate?: T;
-  category?: T;
+  title?: T
+  description?: T
+  coverImage?: T
+  eventDate?: T
+  category?: T
   photos?:
     | T
     | {
-        image?: T;
-        caption?: T;
-        id?: T;
-      };
-  updatedAt?: T;
-  createdAt?: T;
+        image?: T
+        caption?: T
+        id?: T
+      }
+  updatedAt?: T
+  createdAt?: T
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "staff_select".
  */
 export interface StaffSelect<T extends boolean = true> {
-  name?: T;
-  designation?: T;
-  department?: T;
-  qualification?: T;
-  experienceYears?: T;
-  photo?: T;
-  bio?: T;
-  order?: T;
-  updatedAt?: T;
-  createdAt?: T;
+  name?: T
+  designation?: T
+  department?: T
+  qualification?: T
+  experienceYears?: T
+  photo?: T
+  bio?: T
+  order?: T
+  updatedAt?: T
+  createdAt?: T
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "facilities_select".
  */
 export interface FacilitiesSelect<T extends boolean = true> {
-  title?: T;
-  description?: T;
-  category?: T;
-  image?: T;
+  title?: T
+  description?: T
+  category?: T
+  image?: T
   highlights?:
     | T
     | {
-        text?: T;
-        id?: T;
-      };
-  order?: T;
-  updatedAt?: T;
-  createdAt?: T;
+        text?: T
+        id?: T
+      }
+  order?: T
+  updatedAt?: T
+  createdAt?: T
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "results_select".
  */
 export interface ResultsSelect<T extends boolean = true> {
-  academicYear?: T;
-  className?: T;
-  passPercentage?: T;
-  totalStudents?: T;
-  distinctionCount?: T;
+  academicYear?: T
+  className?: T
+  passPercentage?: T
+  totalStudents?: T
+  distinctionCount?: T
   toppers?:
     | T
     | {
-        studentName?: T;
-        percentage?: T;
-        rank?: T;
-        photo?: T;
-        parentalConsentGiven?: T;
-        id?: T;
-      };
-  updatedAt?: T;
-  createdAt?: T;
+        studentName?: T
+        percentage?: T
+        rank?: T
+        photo?: T
+        parentalConsentGiven?: T
+        id?: T
+      }
+  updatedAt?: T
+  createdAt?: T
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "enquiries_select".
  */
 export interface EnquiriesSelect<T extends boolean = true> {
-  fullName?: T;
-  parentName?: T;
-  mobile?: T;
-  email?: T;
-  classApplyingFor?: T;
-  purpose?: T;
-  message?: T;
-  consentGiven?: T;
-  status?: T;
-  internalNotes?: T;
-  updatedAt?: T;
-  createdAt?: T;
+  fullName?: T
+  parentName?: T
+  mobile?: T
+  email?: T
+  classApplyingFor?: T
+  purpose?: T
+  message?: T
+  consentGiven?: T
+  status?: T
+  internalNotes?: T
+  updatedAt?: T
+  createdAt?: T
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "redirects_select".
  */
 export interface RedirectsSelect<T extends boolean = true> {
-  fromPath?: T;
-  toPath?: T;
-  statusCode?: T;
-  updatedAt?: T;
-  createdAt?: T;
+  fromPath?: T
+  toPath?: T
+  statusCode?: T
+  updatedAt?: T
+  createdAt?: T
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "media_select".
  */
 export interface MediaSelect<T extends boolean = true> {
-  alt?: T;
-  caption?: T;
-  updatedAt?: T;
-  createdAt?: T;
-  url?: T;
-  thumbnailURL?: T;
-  filename?: T;
-  mimeType?: T;
-  filesize?: T;
-  width?: T;
-  height?: T;
-  focalX?: T;
-  focalY?: T;
+  alt?: T
+  caption?: T
+  updatedAt?: T
+  createdAt?: T
+  url?: T
+  thumbnailURL?: T
+  filename?: T
+  mimeType?: T
+  filesize?: T
+  width?: T
+  height?: T
+  focalX?: T
+  focalY?: T
   sizes?:
     | T
     | {
         thumbnail?:
           | T
           | {
-              url?: T;
-              width?: T;
-              height?: T;
-              mimeType?: T;
-              filesize?: T;
-              filename?: T;
-            };
+              url?: T
+              width?: T
+              height?: T
+              mimeType?: T
+              filesize?: T
+              filename?: T
+            }
         card?:
           | T
           | {
-              url?: T;
-              width?: T;
-              height?: T;
-              mimeType?: T;
-              filesize?: T;
-              filename?: T;
-            };
+              url?: T
+              width?: T
+              height?: T
+              mimeType?: T
+              filesize?: T
+              filename?: T
+            }
         wide?:
           | T
           | {
-              url?: T;
-              width?: T;
-              height?: T;
-              mimeType?: T;
-              filesize?: T;
-              filename?: T;
-            };
+              url?: T
+              width?: T
+              height?: T
+              mimeType?: T
+              filesize?: T
+              filename?: T
+            }
         hero?:
           | T
           | {
-              url?: T;
-              width?: T;
-              height?: T;
-              mimeType?: T;
-              filesize?: T;
-              filename?: T;
-            };
-      };
+              url?: T
+              width?: T
+              height?: T
+              mimeType?: T
+              filesize?: T
+              filename?: T
+            }
+      }
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "users_select".
  */
 export interface UsersSelect<T extends boolean = true> {
-  name?: T;
-  role?: T;
-  updatedAt?: T;
-  createdAt?: T;
-  email?: T;
-  resetPasswordToken?: T;
-  resetPasswordExpiration?: T;
-  salt?: T;
-  hash?: T;
-  resetPasswordRequestedAt?: T;
-  loginAttempts?: T;
-  lockUntil?: T;
+  name?: T
+  role?: T
+  updatedAt?: T
+  createdAt?: T
+  email?: T
+  resetPasswordToken?: T
+  resetPasswordExpiration?: T
+  salt?: T
+  hash?: T
+  resetPasswordRequestedAt?: T
+  loginAttempts?: T
+  lockUntil?: T
   sessions?:
     | T
     | {
-        id?: T;
-        createdAt?: T;
-        expiresAt?: T;
-      };
+        id?: T
+        createdAt?: T
+        expiresAt?: T
+      }
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-kv_select".
  */
 export interface PayloadKvSelect<T extends boolean = true> {
-  key?: T;
-  data?: T;
+  key?: T
+  data?: T
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-locked-documents_select".
  */
 export interface PayloadLockedDocumentsSelect<T extends boolean = true> {
-  document?: T;
-  globalSlug?: T;
-  user?: T;
-  updatedAt?: T;
-  createdAt?: T;
+  document?: T
+  globalSlug?: T
+  user?: T
+  updatedAt?: T
+  createdAt?: T
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-preferences_select".
  */
 export interface PayloadPreferencesSelect<T extends boolean = true> {
-  user?: T;
-  key?: T;
-  value?: T;
-  updatedAt?: T;
-  createdAt?: T;
+  user?: T
+  key?: T
+  value?: T
+  updatedAt?: T
+  createdAt?: T
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-migrations_select".
  */
 export interface PayloadMigrationsSelect<T extends boolean = true> {
-  name?: T;
-  batch?: T;
-  updatedAt?: T;
-  createdAt?: T;
+  name?: T
+  batch?: T
+  updatedAt?: T
+  createdAt?: T
 }
 /**
  * School institutional identity, phone numbers, email, physical address, and government board information.
@@ -1150,19 +1151,19 @@ export interface PayloadMigrationsSelect<T extends boolean = true> {
  * via the `definition` "site-settings".
  */
 export interface SiteSetting {
-  id: number;
-  name: string;
-  shortName: string;
-  tagline: string;
+  id: number
+  name: string
+  shortName: string
+  tagline: string
   /**
    * Transparent SVG or high-resolution PNG format.
    */
-  logo?: (number | null) | Media;
-  favicon?: (number | null) | Media;
-  phone: string;
-  alternatePhone?: string | null;
-  email: string;
-  address: string;
+  logo?: (number | null) | Media
+  favicon?: (number | null) | Media
+  phone: string
+  alternatePhone?: string | null
+  email: string
+  address: string
   /**
    * Structured school address, GPS coordinates, and Google Maps links.
    */
@@ -1170,73 +1171,73 @@ export interface SiteSetting {
     /**
      * Building, campus, or institution name.
      */
-    addressLine1: string;
+    addressLine1: string
     /**
      * Street name, landmark, or local area.
      */
-    addressLine2?: string | null;
+    addressLine2?: string | null
     /**
      * Village, town, or locality name.
      */
-    village: string;
+    village: string
     /**
      * District name (e.g., Solapur).
      */
-    district: string;
+    district: string
     /**
      * State name (e.g., Maharashtra).
      */
-    state: string;
+    state: string
     /**
      * 6-digit postal PIN code.
      */
-    pincode: string;
+    pincode: string
     /**
      * Digital location code (e.g., 4F62+JQG Chinchgaon).
      */
-    plusCode?: string | null;
+    plusCode?: string | null
     /**
      * Geographic latitude coordinate (decimal degrees, e.g., 18.0673).
      */
-    latitude?: number | null;
+    latitude?: number | null
     /**
      * Geographic longitude coordinate (decimal degrees, e.g., 75.3857).
      */
-    longitude?: number | null;
+    longitude?: number | null
     /**
      * Paste the Share link from Google Maps. If empty, one is built from the coordinates or the address.
      */
-    googleMapsUrl?: string | null;
+    googleMapsUrl?: string | null
     /**
      * Text shown on the directions link (default: "Get directions").
      */
-    directionsLabel?: string | null;
-  };
-  mapEmbedUrl?: string | null;
-  officeHours?: string | null;
+    directionsLabel?: string | null
+  }
+  mapEmbedUrl?: string | null
+  officeHours?: string | null
   socialLinks?: {
-    facebook?: string | null;
-    youtube?: string | null;
-    instagram?: string | null;
-    twitter?: string | null;
-  };
+    facebook?: string | null
+    youtube?: string | null
+    instagram?: string | null
+    twitter?: string | null
+  }
   /**
    * External link to student management / attendance portal.
    */
-  parentPortalUrl?: string | null;
+  parentPortalUrl?: string | null
   /**
    * Direct link to bank payment gateway or fees system.
    */
-  feePaymentUrl?: string | null;
+  feePaymentUrl?: string | null
   institutionalFacts?: {
-    board?: string | null;
-    classesOffered?: string | null;
-    mediumOfInstruction?: string | null;
-    approxStudentCount?: number | null;
-    approxStaffCount?: number | null;
-  };
-  updatedAt?: string | null;
-  createdAt?: string | null;
+    board?: string | null
+    classesOffered?: string | null
+    mediumOfInstruction?: string | null
+    approxStudentCount?: number | null
+    approxStaffCount?: number | null
+  }
+  updatedAt?: string | null
+  createdAt?: string | null
 }
 /**
  * Header menus, top utility bar links, dropdown navigation tree, and call-to-action buttons.
@@ -1245,37 +1246,37 @@ export interface SiteSetting {
  * via the `definition` "navigation".
  */
 export interface Navigation {
-  id: number;
+  id: number
   utilityBarLinks?:
     | {
-        label: string;
-        url: string;
-        icon?: string | null;
-        openInNewTab?: boolean | null;
-        id?: string | null;
+        label: string
+        url: string
+        icon?: string | null
+        openInNewTab?: boolean | null
+        id?: string | null
       }[]
-    | null;
+    | null
   menuItems?:
     | {
-        label: string;
-        url: string;
+        label: string
+        url: string
         subItems?:
           | {
-              label: string;
-              url: string;
-              description?: string | null;
-              id?: string | null;
+              label: string
+              url: string
+              description?: string | null
+              id?: string | null
             }[]
-          | null;
-        id?: string | null;
+          | null
+        id?: string | null
       }[]
-    | null;
+    | null
   admissionCta?: {
-    label?: string | null;
-    url?: string | null;
-  };
-  updatedAt?: string | null;
-  createdAt?: string | null;
+    label?: string | null
+    url?: string | null
+  }
+  updatedAt?: string | null
+  createdAt?: string | null
 }
 /**
  * Footer portal links, legal notices, address summary, and copyright text.
@@ -1284,40 +1285,40 @@ export interface Navigation {
  * via the `definition` "footer".
  */
 export interface Footer {
-  id: number;
-  aboutText?: string | null;
+  id: number
+  aboutText?: string | null
   quickLinks?:
     | {
-        label: string;
-        url: string;
-        id?: string | null;
+        label: string
+        url: string
+        id?: string | null
       }[]
-    | null;
+    | null
   academicLinks?:
     | {
-        label: string;
-        url: string;
-        id?: string | null;
+        label: string
+        url: string
+        id?: string | null
       }[]
-    | null;
+    | null
   portalLinks?:
     | {
-        label: string;
-        url: string;
-        id?: string | null;
+        label: string
+        url: string
+        id?: string | null
       }[]
-    | null;
+    | null
   legalLinks?:
     | {
-        label: string;
-        url: string;
-        id?: string | null;
+        label: string
+        url: string
+        id?: string | null
       }[]
-    | null;
-  copyrightText?: string | null;
-  complianceText?: string | null;
-  updatedAt?: string | null;
-  createdAt?: string | null;
+    | null
+  copyrightText?: string | null
+  complianceText?: string | null
+  updatedAt?: string | null
+  createdAt?: string | null
 }
 /**
  * Dynamic homepage content: hero video and poster, headline, announcement strip, stage cards, principal welcome, why DNKV, results, and section toggles.
@@ -1326,156 +1327,156 @@ export interface Footer {
  * via the `definition` "homepage".
  */
 export interface Homepage {
-  id: number;
+  id: number
   announcementStrip?: {
-    enabled?: boolean | null;
-    text?: string | null;
-    linkUrl?: string | null;
-    linkLabel?: string | null;
-    startDate?: string | null;
-    endDate?: string | null;
-  };
+    enabled?: boolean | null
+    text?: string | null
+    linkUrl?: string | null
+    linkLabel?: string | null
+    startDate?: string | null
+    endDate?: string | null
+  }
   hero: {
-    headline: string;
-    subheadline: string;
+    headline: string
+    subheadline: string
     /**
      * Landscape cinematic video loop. Silent, 15-20s duration.
      */
-    videoDesktop?: (number | null) | Media;
+    videoDesktop?: (number | null) | Media
     /**
      * Optimized lower-bitrate stream for 4G mobile devices.
      */
-    videoMobile?: (number | null) | Media;
+    videoMobile?: (number | null) | Media
     /**
      * Displays immediately before video loads, or when user has Save-Data or Reduced-Motion enabled.
      */
-    posterImage?: (number | null) | Media;
+    posterImage?: (number | null) | Media
     primaryButton?: {
-      label?: string | null;
-      url?: string | null;
-    };
+      label?: string | null
+      url?: string | null
+    }
     secondaryButton?: {
-      label?: string | null;
-      url?: string | null;
-    };
-  };
+      label?: string | null
+      url?: string | null
+    }
+  }
   stageCards?: {
-    enabled?: boolean | null;
-    sectionTitle?: string | null;
-    sectionSubtitle?: string | null;
+    enabled?: boolean | null
+    sectionTitle?: string | null
+    sectionSubtitle?: string | null
     stages?:
       | {
-          title: string;
-          grades: string;
-          description: string;
-          image?: (number | null) | Media;
-          linkUrl?: string | null;
-          id?: string | null;
+          title: string
+          grades: string
+          description: string
+          image?: (number | null) | Media
+          linkUrl?: string | null
+          id?: string | null
         }[]
-      | null;
-  };
+      | null
+  }
   principalWelcome?: {
-    enabled?: boolean | null;
-    heading?: string | null;
-    principalName?: string | null;
-    principalDesignation?: string | null;
-    message?: string | null;
-    photo?: (number | null) | Media;
-    readMoreLink?: string | null;
-  };
+    enabled?: boolean | null
+    heading?: string | null
+    principalName?: string | null
+    principalDesignation?: string | null
+    message?: string | null
+    photo?: (number | null) | Media
+    readMoreLink?: string | null
+  }
   whyDnkv?: {
-    enabled?: boolean | null;
-    heading?: string | null;
-    subheading?: string | null;
+    enabled?: boolean | null
+    heading?: string | null
+    subheading?: string | null
     pillars?:
       | {
-          icon?: string | null;
-          title: string;
-          description: string;
-          id?: string | null;
+          icon?: string | null
+          title: string
+          description: string
+          id?: string | null
         }[]
-      | null;
-  };
+      | null
+  }
   resultsBlock?: {
-    enabled?: boolean | null;
-    heading?: string | null;
-    subheading?: string | null;
+    enabled?: boolean | null
+    heading?: string | null
+    subheading?: string | null
     stats?:
       | {
-          value: string;
-          label: string;
-          id?: string | null;
+          value: string
+          label: string
+          id?: string | null
         }[]
-      | null;
-  };
+      | null
+  }
   sectionVisibility?: {
-    showAnnouncementStrip?: boolean | null;
-    showHero?: boolean | null;
-    showStageCards?: boolean | null;
-    showPrincipalWelcome?: boolean | null;
-    showWhyDnkv?: boolean | null;
-    showNoticesAndNews?: boolean | null;
-    showFacilitiesStrip?: boolean | null;
-    showResults?: boolean | null;
-    showGalleryPreview?: boolean | null;
-    showEnquiryForm?: boolean | null;
-  };
-  updatedAt?: string | null;
-  createdAt?: string | null;
+    showAnnouncementStrip?: boolean | null
+    showHero?: boolean | null
+    showStageCards?: boolean | null
+    showPrincipalWelcome?: boolean | null
+    showWhyDnkv?: boolean | null
+    showNoticesAndNews?: boolean | null
+    showFacilitiesStrip?: boolean | null
+    showResults?: boolean | null
+    showGalleryPreview?: boolean | null
+    showEnquiryForm?: boolean | null
+  }
+  updatedAt?: string | null
+  createdAt?: string | null
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "site-settings_select".
  */
 export interface SiteSettingsSelect<T extends boolean = true> {
-  name?: T;
-  shortName?: T;
-  tagline?: T;
-  logo?: T;
-  favicon?: T;
-  phone?: T;
-  alternatePhone?: T;
-  email?: T;
-  address?: T;
+  name?: T
+  shortName?: T
+  tagline?: T
+  logo?: T
+  favicon?: T
+  phone?: T
+  alternatePhone?: T
+  email?: T
+  address?: T
   location?:
     | T
     | {
-        addressLine1?: T;
-        addressLine2?: T;
-        village?: T;
-        district?: T;
-        state?: T;
-        pincode?: T;
-        plusCode?: T;
-        latitude?: T;
-        longitude?: T;
-        googleMapsUrl?: T;
-        directionsLabel?: T;
-      };
-  mapEmbedUrl?: T;
-  officeHours?: T;
+        addressLine1?: T
+        addressLine2?: T
+        village?: T
+        district?: T
+        state?: T
+        pincode?: T
+        plusCode?: T
+        latitude?: T
+        longitude?: T
+        googleMapsUrl?: T
+        directionsLabel?: T
+      }
+  mapEmbedUrl?: T
+  officeHours?: T
   socialLinks?:
     | T
     | {
-        facebook?: T;
-        youtube?: T;
-        instagram?: T;
-        twitter?: T;
-      };
-  parentPortalUrl?: T;
-  feePaymentUrl?: T;
+        facebook?: T
+        youtube?: T
+        instagram?: T
+        twitter?: T
+      }
+  parentPortalUrl?: T
+  feePaymentUrl?: T
   institutionalFacts?:
     | T
     | {
-        board?: T;
-        classesOffered?: T;
-        mediumOfInstruction?: T;
-        approxStudentCount?: T;
-        approxStaffCount?: T;
-      };
-  updatedAt?: T;
-  createdAt?: T;
-  globalType?: T;
+        board?: T
+        classesOffered?: T
+        mediumOfInstruction?: T
+        approxStudentCount?: T
+        approxStaffCount?: T
+      }
+  updatedAt?: T
+  createdAt?: T
+  globalType?: T
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -1485,76 +1486,76 @@ export interface NavigationSelect<T extends boolean = true> {
   utilityBarLinks?:
     | T
     | {
-        label?: T;
-        url?: T;
-        icon?: T;
-        openInNewTab?: T;
-        id?: T;
-      };
+        label?: T
+        url?: T
+        icon?: T
+        openInNewTab?: T
+        id?: T
+      }
   menuItems?:
     | T
     | {
-        label?: T;
-        url?: T;
+        label?: T
+        url?: T
         subItems?:
           | T
           | {
-              label?: T;
-              url?: T;
-              description?: T;
-              id?: T;
-            };
-        id?: T;
-      };
+              label?: T
+              url?: T
+              description?: T
+              id?: T
+            }
+        id?: T
+      }
   admissionCta?:
     | T
     | {
-        label?: T;
-        url?: T;
-      };
-  updatedAt?: T;
-  createdAt?: T;
-  globalType?: T;
+        label?: T
+        url?: T
+      }
+  updatedAt?: T
+  createdAt?: T
+  globalType?: T
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "footer_select".
  */
 export interface FooterSelect<T extends boolean = true> {
-  aboutText?: T;
+  aboutText?: T
   quickLinks?:
     | T
     | {
-        label?: T;
-        url?: T;
-        id?: T;
-      };
+        label?: T
+        url?: T
+        id?: T
+      }
   academicLinks?:
     | T
     | {
-        label?: T;
-        url?: T;
-        id?: T;
-      };
+        label?: T
+        url?: T
+        id?: T
+      }
   portalLinks?:
     | T
     | {
-        label?: T;
-        url?: T;
-        id?: T;
-      };
+        label?: T
+        url?: T
+        id?: T
+      }
   legalLinks?:
     | T
     | {
-        label?: T;
-        url?: T;
-        id?: T;
-      };
-  copyrightText?: T;
-  complianceText?: T;
-  updatedAt?: T;
-  createdAt?: T;
-  globalType?: T;
+        label?: T
+        url?: T
+        id?: T
+      }
+  copyrightText?: T
+  complianceText?: T
+  updatedAt?: T
+  createdAt?: T
+  globalType?: T
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -1564,108 +1565,108 @@ export interface HomepageSelect<T extends boolean = true> {
   announcementStrip?:
     | T
     | {
-        enabled?: T;
-        text?: T;
-        linkUrl?: T;
-        linkLabel?: T;
-        startDate?: T;
-        endDate?: T;
-      };
+        enabled?: T
+        text?: T
+        linkUrl?: T
+        linkLabel?: T
+        startDate?: T
+        endDate?: T
+      }
   hero?:
     | T
     | {
-        headline?: T;
-        subheadline?: T;
-        videoDesktop?: T;
-        videoMobile?: T;
-        posterImage?: T;
+        headline?: T
+        subheadline?: T
+        videoDesktop?: T
+        videoMobile?: T
+        posterImage?: T
         primaryButton?:
           | T
           | {
-              label?: T;
-              url?: T;
-            };
+              label?: T
+              url?: T
+            }
         secondaryButton?:
           | T
           | {
-              label?: T;
-              url?: T;
-            };
-      };
+              label?: T
+              url?: T
+            }
+      }
   stageCards?:
     | T
     | {
-        enabled?: T;
-        sectionTitle?: T;
-        sectionSubtitle?: T;
+        enabled?: T
+        sectionTitle?: T
+        sectionSubtitle?: T
         stages?:
           | T
           | {
-              title?: T;
-              grades?: T;
-              description?: T;
-              image?: T;
-              linkUrl?: T;
-              id?: T;
-            };
-      };
+              title?: T
+              grades?: T
+              description?: T
+              image?: T
+              linkUrl?: T
+              id?: T
+            }
+      }
   principalWelcome?:
     | T
     | {
-        enabled?: T;
-        heading?: T;
-        principalName?: T;
-        principalDesignation?: T;
-        message?: T;
-        photo?: T;
-        readMoreLink?: T;
-      };
+        enabled?: T
+        heading?: T
+        principalName?: T
+        principalDesignation?: T
+        message?: T
+        photo?: T
+        readMoreLink?: T
+      }
   whyDnkv?:
     | T
     | {
-        enabled?: T;
-        heading?: T;
-        subheading?: T;
+        enabled?: T
+        heading?: T
+        subheading?: T
         pillars?:
           | T
           | {
-              icon?: T;
-              title?: T;
-              description?: T;
-              id?: T;
-            };
-      };
+              icon?: T
+              title?: T
+              description?: T
+              id?: T
+            }
+      }
   resultsBlock?:
     | T
     | {
-        enabled?: T;
-        heading?: T;
-        subheading?: T;
+        enabled?: T
+        heading?: T
+        subheading?: T
         stats?:
           | T
           | {
-              value?: T;
-              label?: T;
-              id?: T;
-            };
-      };
+              value?: T
+              label?: T
+              id?: T
+            }
+      }
   sectionVisibility?:
     | T
     | {
-        showAnnouncementStrip?: T;
-        showHero?: T;
-        showStageCards?: T;
-        showPrincipalWelcome?: T;
-        showWhyDnkv?: T;
-        showNoticesAndNews?: T;
-        showFacilitiesStrip?: T;
-        showResults?: T;
-        showGalleryPreview?: T;
-        showEnquiryForm?: T;
-      };
-  updatedAt?: T;
-  createdAt?: T;
-  globalType?: T;
+        showAnnouncementStrip?: T
+        showHero?: T
+        showStageCards?: T
+        showPrincipalWelcome?: T
+        showWhyDnkv?: T
+        showNoticesAndNews?: T
+        showFacilitiesStrip?: T
+        showResults?: T
+        showGalleryPreview?: T
+        showEnquiryForm?: T
+      }
+  updatedAt?: T
+  createdAt?: T
+  globalType?: T
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -1673,18 +1674,17 @@ export interface HomepageSelect<T extends boolean = true> {
  */
 export interface CollectionsWidget {
   data?: {
-    [k: string]: unknown;
-  };
-  width: 'full';
+    [k: string]: unknown
+  }
+  width: 'full'
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "auth".
  */
 export interface Auth {
-  [k: string]: unknown;
+  [k: string]: unknown
 }
-
 
 declare module 'payload' {
   export interface GeneratedTypes extends Config {}

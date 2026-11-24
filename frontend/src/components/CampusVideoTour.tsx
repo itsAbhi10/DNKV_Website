@@ -86,7 +86,10 @@ export function CampusVideoTour() {
   }
 
   return (
-    <section className="py-16 md:py-24 bg-slate-900 text-white relative overflow-hidden" aria-label="Campus Video Tour">
+    <section
+      className="py-16 md:py-24 bg-slate-900 text-white relative overflow-hidden"
+      aria-label="Campus Video Tour"
+    >
       {/* Subtle background glow */}
       <div className="absolute top-0 right-1/4 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
@@ -101,7 +104,8 @@ export function CampusVideoTour() {
             Take a Video Tour of DNKV
           </h2>
           <p className="mt-4 text-base md:text-lg text-slate-300">
-            Witness our vibrant rural campus, modern laboratories, active sports grounds, and energetic classroom sessions in action.
+            Witness our vibrant rural campus, modern laboratories, active sports grounds, and
+            energetic classroom sessions in action.
           </p>
         </div>
 
@@ -155,7 +159,11 @@ export function CampusVideoTour() {
                     aria-label={isPlaying ? 'Pause video' : 'Play video'}
                     className="p-2 rounded-lg bg-white/10 hover:bg-white/20 transition-colors"
                   >
-                    {isPlaying ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4 fill-current" />}
+                    {isPlaying ? (
+                      <Pause className="w-4 h-4" />
+                    ) : (
+                      <Play className="w-4 h-4 fill-current" />
+                    )}
                   </button>
 
                   <button
@@ -164,7 +172,11 @@ export function CampusVideoTour() {
                     aria-label={isMuted ? 'Unmute video' : 'Mute video'}
                     className="p-2 rounded-lg bg-white/10 hover:bg-white/20 transition-colors"
                   >
-                    {isMuted ? <VolumeX className="w-4 h-4 text-red-400" /> : <Volume2 className="w-4 h-4" />}
+                    {isMuted ? (
+                      <VolumeX className="w-4 h-4 text-red-400" />
+                    ) : (
+                      <Volume2 className="w-4 h-4" />
+                    )}
                   </button>
 
                   <span className="font-mono text-xs text-slate-300">

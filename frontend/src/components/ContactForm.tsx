@@ -22,7 +22,8 @@ export function ContactForm() {
     <div className="bg-white rounded-3xl p-8 md:p-12 border border-slate-200/80 shadow-md">
       <h2 className="text-2xl font-bold text-slate-900 mb-2">Send Us a Direct Message</h2>
       <p className="text-sm text-slate-500 mb-8">
-        Whether you have an enquiry about academics, events, or student admission, please leave a message below.
+        Whether you have an enquiry about academics, events, or student admission, please leave a
+        message below.
       </p>
 
       {submitted ? (
@@ -32,7 +33,8 @@ export function ContactForm() {
           </div>
           <h3 className="text-2xl font-bold text-slate-900 mb-2">Message Dispatched!</h3>
           <p className="text-slate-600 text-sm max-w-md mx-auto mb-6">
-            Thank you, {formData.name || 'Parent'}. Your message has been received by the DNKV administration office. We will reply promptly.
+            Thank you, {formData.name || 'Parent'}. Your message has been received by the DNKV
+            administration office. We will reply promptly.
           </p>
           <button
             type="button"

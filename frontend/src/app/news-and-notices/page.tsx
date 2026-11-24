@@ -47,7 +47,8 @@ export default async function NewsAndNoticesPage() {
             Notices & News Updates
           </h1>
           <p className="text-base md:text-xl text-slate-300 max-w-3xl">
-            Stay informed with verified circulars, academic schedules, examination dates, student achievements, and community news.
+            Stay informed with verified circulars, academic schedules, examination dates, student
+            achievements, and community news.
           </p>
         </div>
       </div>
@@ -86,14 +87,14 @@ export default async function NewsAndNoticesPage() {
                     </span>
                   </div>
 
-                  <h3 className="text-base font-bold text-slate-900 mb-2">
-                    {notice.title}
-                  </h3>
+                  <h3 className="text-base font-bold text-slate-900 mb-2">{notice.title}</h3>
 
                   {notice.expiryDate && (
                     <div className="text-xs text-amber-700 flex items-center gap-1 mb-4">
                       <Clock className="w-3 h-3" />
-                      <span>Valid until: {new Date(notice.expiryDate).toLocaleDateString('en-IN')}</span>
+                      <span>
+                        Valid until: {new Date(notice.expiryDate).toLocaleDateString('en-IN')}
+                      </span>
                     </div>
                   )}
 
@@ -142,13 +143,9 @@ export default async function NewsAndNoticesPage() {
                       </span>
                     </div>
 
-                    <h3 className="text-lg font-bold text-slate-900 mb-2">
-                      {item.title}
-                    </h3>
+                    <h3 className="text-lg font-bold text-slate-900 mb-2">{item.title}</h3>
 
-                    <p className="text-sm text-slate-600 leading-relaxed mb-4">
-                      {item.summary}
-                    </p>
+                    <p className="text-sm text-slate-600 leading-relaxed mb-4">{item.summary}</p>
                   </div>
 
                   <div className="pt-4 border-t border-slate-100 flex items-center justify-between text-xs">

@@ -44,9 +44,7 @@ export function EnquiryForm() {
       ) : (
         <form action={formAction} className="space-y-6">
           <div>
-            <h2 className="text-2xl font-bold text-slate-900 mb-1">
-              Student & Guardian Details
-            </h2>
+            <h2 className="text-2xl font-bold text-slate-900 mb-1">Student & Guardian Details</h2>
             <p className="text-sm text-slate-500 mb-6">
               Fields marked with <span className="text-red-500 font-bold">*</span> are required.
             </p>
@@ -69,7 +67,10 @@ export function EnquiryForm() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {/* Student Name */}
             <div>
-              <label htmlFor="studentName" className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
+              <label
+                htmlFor="studentName"
+                className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2"
+              >
                 Student Full Name <span className="text-red-500">*</span>
               </label>
               <input
@@ -87,7 +88,10 @@ export function EnquiryForm() {
 
             {/* Parent Name */}
             <div>
-              <label htmlFor="parentName" className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
+              <label
+                htmlFor="parentName"
+                className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2"
+              >
                 Parent / Guardian Name <span className="text-red-500">*</span>
               </label>
               <input
@@ -105,7 +109,10 @@ export function EnquiryForm() {
 
             {/* Phone Number */}
             <div>
-              <label htmlFor="phone" className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
+              <label
+                htmlFor="phone"
+                className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2"
+              >
                 Mobile Number (WhatsApp) <span className="text-red-500">*</span>
               </label>
               <input
@@ -124,7 +131,10 @@ export function EnquiryForm() {
 
             {/* Email (Optional) */}
             <div>
-              <label htmlFor="email" className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
+              <label
+                htmlFor="email"
+                className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2"
+              >
                 Email Address (Optional)
               </label>
               <input
@@ -141,7 +151,10 @@ export function EnquiryForm() {
 
             {/* Class Applying For */}
             <div>
-              <label htmlFor="applyingForClass" className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
+              <label
+                htmlFor="applyingForClass"
+                className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2"
+              >
                 Class Applying For <span className="text-red-500">*</span>
               </label>
               <select
@@ -151,7 +164,9 @@ export function EnquiryForm() {
                 defaultValue=""
                 className="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-transparent text-sm bg-white"
               >
-                <option value="" disabled>Select Class...</option>
+                <option value="" disabled>
+                  Select Class...
+                </option>
                 <option value="Nursery">Nursery</option>
                 <option value="LKG">Junior KG (LKG)</option>
                 <option value="UKG">Senior KG (UKG)</option>
@@ -173,7 +188,10 @@ export function EnquiryForm() {
 
             {/* Village / Town */}
             <div>
-              <label htmlFor="villageOrTown" className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
+              <label
+                htmlFor="villageOrTown"
+                className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2"
+              >
                 Residential Village / Town <span className="text-red-500">*</span>
               </label>
               <input
@@ -192,7 +210,10 @@ export function EnquiryForm() {
 
           {/* Previous School */}
           <div>
-            <label htmlFor="previousSchool" className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
+            <label
+              htmlFor="previousSchool"
+              className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2"
+            >
               Previous School Attended (If Applicable)
             </label>
             <input
@@ -206,7 +227,10 @@ export function EnquiryForm() {
 
           {/* Any Message / Question */}
           <div>
-            <label htmlFor="message" className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
+            <label
+              htmlFor="message"
+              className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2"
+            >
               Any Questions or Comments?
             </label>
             <textarea
@@ -222,7 +246,9 @@ export function EnquiryForm() {
           <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-600 flex items-start gap-3">
             <ShieldCheck className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" />
             <span>
-              <strong>DPDP Act 2023 Compliance:</strong> By submitting this form, you authorize Dr. Netaji Karale Vidyalaya to contact you regarding admission formalities. Your information is securely kept and never shared.
+              <strong>DPDP Act 2023 Compliance:</strong> By submitting this form, you authorize Dr.
+              Netaji Karale Vidyalaya to contact you regarding admission formalities. Your
+              information is securely kept and never shared.
             </span>
           </div>
 

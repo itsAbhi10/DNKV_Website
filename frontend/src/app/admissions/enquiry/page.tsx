@@ -33,7 +33,8 @@ export default async function AdmissionEnquiryPage() {
             Online Admission Enquiry Form
           </h1>
           <p className="text-base md:text-xl text-slate-300 max-w-3xl">
-            Register your interest for Pre-Primary through Class X. Our admissions office will get in touch to schedule a personal interaction and campus tour.
+            Register your interest for Pre-Primary through Class X. Our admissions office will get
+            in touch to schedule a personal interaction and campus tour.
           </p>
         </div>
       </div>
@@ -52,7 +53,8 @@ export default async function AdmissionEnquiryPage() {
                 Visit Our Campus & Admissions Desk
               </h3>
               <p className="text-xs text-slate-600 mb-6 leading-relaxed">
-                Parents are warmly encouraged to visit the campus during office hours or connect with our counselor directly.
+                Parents are warmly encouraged to visit the campus during office hours or connect
+                with our counselor directly.
               </p>
 
               <div className="space-y-4">
@@ -81,7 +83,9 @@ export default async function AdmissionEnquiryPage() {
                     <Mail className="w-5 h-5" />
                   </div>
                   <div className="truncate">
-                    <div className="text-[11px] text-slate-500 font-medium">Email (Click to open mailbox)</div>
+                    <div className="text-[11px] text-slate-500 font-medium">
+                      Email (Click to open mailbox)
+                    </div>
                     <div className="font-semibold text-slate-900 text-xs truncate">{email}</div>
                   </div>
                 </MailboxLink>
@@ -92,17 +96,15 @@ export default async function AdmissionEnquiryPage() {
                     <Clock className="w-5 h-5" />
                   </div>
                   <div>
-                    <div className="text-[11px] text-slate-500 font-medium">Office Working Hours</div>
+                    <div className="text-[11px] text-slate-500 font-medium">
+                      Office Working Hours
+                    </div>
                     <div className="font-semibold text-slate-900 text-xs">{officeHours}</div>
                   </div>
                 </div>
 
                 {/* Campus Location Link */}
-                <LocationLink
-                  location={location}
-                  siteSettings={siteSettings}
-                  variant="card"
-                />
+                <LocationLink location={location} siteSettings={siteSettings} variant="card" />
 
                 {/* Static Placeholder Map Preview with 'Load map' button */}
                 <InteractiveMapPreview
@@ -118,19 +120,28 @@ export default async function AdmissionEnquiryPage() {
               <h4 className="font-bold text-base mb-3 text-amber-400">Helpful Resources</h4>
               <ul className="space-y-2 text-xs">
                 <li>
-                  <Link href="/admissions/process" className="text-slate-300 hover:text-white flex items-center justify-between py-1.5 border-b border-slate-800">
+                  <Link
+                    href="/admissions/process"
+                    className="text-slate-300 hover:text-white flex items-center justify-between py-1.5 border-b border-slate-800"
+                  >
                     <span>Admission Step-by-Step Procedure</span>
                     <span>&rarr;</span>
                   </Link>
                 </li>
                 <li>
-                  <Link href="/admissions/fees" className="text-slate-300 hover:text-white flex items-center justify-between py-1.5 border-b border-slate-800">
+                  <Link
+                    href="/admissions/fees"
+                    className="text-slate-300 hover:text-white flex items-center justify-between py-1.5 border-b border-slate-800"
+                  >
                     <span>Fee Structure & Payment Schedule</span>
                     <span>&rarr;</span>
                   </Link>
                 </li>
                 <li>
-                  <Link href="/admissions/documents" className="text-slate-300 hover:text-white flex items-center justify-between py-1.5">
+                  <Link
+                    href="/admissions/documents"
+                    className="text-slate-300 hover:text-white flex items-center justify-between py-1.5"
+                  >
                     <span>Required Verification Documents</span>
                     <span>&rarr;</span>
                   </Link>

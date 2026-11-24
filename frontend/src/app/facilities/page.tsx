@@ -109,7 +109,8 @@ const detailedFacilities = [
 
 export default async function FacilitiesPage() {
   const cmsFacilitiesRes = await fetchCmsCollection<Facility>('facilities', { sort: 'order' })
-  const facilitiesList = cmsFacilitiesRes.docs.length > 0 ? cmsFacilitiesRes.docs : fallbackFacilities
+  const facilitiesList =
+    cmsFacilitiesRes.docs.length > 0 ? cmsFacilitiesRes.docs : fallbackFacilities
 
   return (
     <div className="min-h-screen bg-slate-50">
@@ -124,7 +125,8 @@ export default async function FacilitiesPage() {
             Campus Facilities
           </h1>
           <p className="text-base md:text-xl text-slate-300 max-w-3xl">
-            A comprehensive, modern educational campus in Chinchgaon designed for experiential learning, scientific discovery, physical fitness, and student well-being.
+            A comprehensive, modern educational campus in Chinchgaon designed for experiential
+            learning, scientific discovery, physical fitness, and student well-being.
           </p>
         </div>
       </div>
@@ -149,12 +151,8 @@ export default async function FacilitiesPage() {
                     </span>
                   </div>
 
-                  <h2 className="text-xl font-bold text-slate-900 mb-3">
-                    {fac.title}
-                  </h2>
-                  <p className="text-sm text-slate-600 leading-relaxed mb-6">
-                    {fac.summary}
-                  </p>
+                  <h2 className="text-xl font-bold text-slate-900 mb-3">{fac.title}</h2>
+                  <p className="text-sm text-slate-600 leading-relaxed mb-6">{fac.summary}</p>
 
                   <div className="space-y-2.5 mb-8">
                     {fac.points.map((p, idx) => (
@@ -186,7 +184,8 @@ export default async function FacilitiesPage() {
               Want to see our campus in motion?
             </h3>
             <p className="text-slate-300 text-sm md:text-base">
-              Watch our full HD campus video tour covering the morning assembly, science laboratories, computer classes, and sports ground.
+              Watch our full HD campus video tour covering the morning assembly, science
+              laboratories, computer classes, and sports ground.
             </p>
           </div>
           <Link

@@ -58,9 +58,7 @@ export function Header({ navigation, siteSettings }: HeaderProps) {
   return (
     <header
       className={`sticky top-0 z-40 bg-white/95 backdrop-blur-xl border-b transition-all duration-200 ${
-        isScrolled
-          ? 'border-slate-300/80 shadow-sm py-1.5'
-          : 'border-slate-200/80 shadow-xs py-2'
+        isScrolled ? 'border-slate-300/80 shadow-sm py-1.5' : 'border-slate-200/80 shadow-xs py-2'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -72,7 +70,10 @@ export function Header({ navigation, siteSettings }: HeaderProps) {
             aria-label={`${schoolName} - Home`}
           >
             {/* Sleek Royal Crest */}
-            <SchoolEmblem size={44} className="group-hover:scale-105 transition-transform shrink-0" />
+            <SchoolEmblem
+              size={44}
+              className="group-hover:scale-105 transition-transform shrink-0"
+            />
 
             <div className="flex flex-col justify-center">
               {/* Only the school title line */}

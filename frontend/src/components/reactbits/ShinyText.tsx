@@ -13,7 +13,7 @@ interface ShinyTextProps {
 /**
  * React Bits - ShinyText Component
  * Subtle, elegant shimmer effect for CTAs and highlighted text.
- * 
+ *
  * Rules honoured:
  * - Plays ON HOVER or ONCE on load only (strictly NO infinite CPU-consuming loops)
  * - Automatically disabled when prefers-reduced-motion is active
@@ -46,8 +46,7 @@ export function ShinyText({
     setIsHovered(false)
   }
 
-  const shouldAnimate =
-    trigger === 'hover' ? isHovered : !hasRunOnce
+  const shouldAnimate = trigger === 'hover' ? isHovered : !hasRunOnce
 
   return (
     <span

@@ -5,7 +5,9 @@ test.describe('School Location & Google Maps Links', () => {
     await page.goto('/')
 
     // Address link in admissions / campus card
-    const addressLink = page.locator('a[aria-label="Open DNKV location in Google Maps (opens in a new tab)"]').first()
+    const addressLink = page
+      .locator('a[aria-label="Open DNKV location in Google Maps (opens in a new tab)"]')
+      .first()
     await expect(addressLink).toBeVisible()
 
     const addressHref = await addressLink.getAttribute('href')
@@ -16,11 +18,15 @@ test.describe('School Location & Google Maps Links', () => {
     expect(await addressLink.getAttribute('rel')).toContain('noreferrer')
 
     // "Get directions" link
-    const directionsLink = page.locator('a[aria-label="Get directions to DNKV in Google Maps (opens in a new tab)"]').first()
+    const directionsLink = page
+      .locator('a[aria-label="Get directions to DNKV in Google Maps (opens in a new tab)"]')
+      .first()
     await expect(directionsLink).toBeVisible()
 
     const directionsHref = await directionsLink.getAttribute('href')
-    expect(directionsHref).toMatch(/^https:\/\/(www\.)?google\.com\/maps\/dir\/\?api=1&destination=/)
+    expect(directionsHref).toMatch(
+      /^https:\/\/(www\.)?google\.com\/maps\/dir\/\?api=1&destination=/,
+    )
     expect(await directionsLink.getAttribute('target')).toBe('_blank')
     expect(await directionsLink.getAttribute('rel')).toContain('noopener')
     expect(await directionsLink.getAttribute('rel')).toContain('noreferrer')
@@ -33,13 +39,17 @@ test.describe('School Location & Google Maps Links', () => {
     expect(await mapIframe.getAttribute('src')).toContain('75.4519531')
   })
 
-  test('Footer: Address and directions links are present with required attributes', async ({ page }) => {
+  test('Footer: Address and directions links are present with required attributes', async ({
+    page,
+  }) => {
     await page.goto('/')
 
     const footer = page.locator('footer[aria-label="School Footer"]')
     await expect(footer).toBeVisible()
 
-    const footerAddressLink = footer.locator('a[aria-label="Open DNKV location in Google Maps (opens in a new tab)"]')
+    const footerAddressLink = footer.locator(
+      'a[aria-label="Open DNKV location in Google Maps (opens in a new tab)"]',
+    )
     await expect(footerAddressLink).toBeVisible()
 
     const footerHref = await footerAddressLink.getAttribute('href')
@@ -48,27 +58,39 @@ test.describe('School Location & Google Maps Links', () => {
     expect(await footerAddressLink.getAttribute('rel')).toContain('noopener')
     expect(await footerAddressLink.getAttribute('rel')).toContain('noreferrer')
 
-    const footerDirectionsLink = footer.locator('a[aria-label="Get directions to DNKV in Google Maps (opens in a new tab)"]')
+    const footerDirectionsLink = footer.locator(
+      'a[aria-label="Get directions to DNKV in Google Maps (opens in a new tab)"]',
+    )
     await expect(footerDirectionsLink).toBeVisible()
     expect(await footerDirectionsLink.getAttribute('target')).toBe('_blank')
   })
 
-  test('Contact Page: School campus office has location link and direct map view', async ({ page }) => {
+  test('Contact Page: School campus office has location link and direct map view', async ({
+    page,
+  }) => {
     await page.goto('/contact')
 
-    const addressLinks = page.locator('a[aria-label="Open DNKV location in Google Maps (opens in a new tab)"]')
+    const addressLinks = page.locator(
+      'a[aria-label="Open DNKV location in Google Maps (opens in a new tab)"]',
+    )
     expect(await addressLinks.count()).toBeGreaterThanOrEqual(1)
 
     const firstAddressLink = addressLinks.first()
     await expect(firstAddressLink).toBeVisible()
-    expect(await firstAddressLink.getAttribute('href')).toMatch(/maps\.app\.goo\.gl|google\.com\/maps/)
+    expect(await firstAddressLink.getAttribute('href')).toMatch(
+      /maps\.app\.goo\.gl|google\.com\/maps/,
+    )
     expect(await firstAddressLink.getAttribute('target')).toBe('_blank')
     expect(await firstAddressLink.getAttribute('rel')).toContain('noopener')
     expect(await firstAddressLink.getAttribute('rel')).toContain('noreferrer')
 
-    const directionsLinks = page.locator('a[aria-label="Get directions to DNKV in Google Maps (opens in a new tab)"]')
+    const directionsLinks = page.locator(
+      'a[aria-label="Get directions to DNKV in Google Maps (opens in a new tab)"]',
+    )
     expect(await directionsLinks.count()).toBeGreaterThanOrEqual(1)
-    expect(await directionsLinks.first().getAttribute('href')).toMatch(/^https:\/\/(www\.)?google\.com\/maps\/dir/)
+    expect(await directionsLinks.first().getAttribute('href')).toMatch(
+      /^https:\/\/(www\.)?google\.com\/maps\/dir/,
+    )
 
     // Direct map iframe
     const mapIframe = page.locator('iframe[title="Dr. Netaji Karale Vidyalaya Campus Map"]').first()
@@ -76,19 +98,27 @@ test.describe('School Location & Google Maps Links', () => {
     expect(await mapIframe.getAttribute('src')).toContain('18.1115625')
   })
 
-  test('Admissions Enquiry Page: Visit our campus card has location link and direct map view', async ({ page }) => {
+  test('Admissions Enquiry Page: Visit our campus card has location link and direct map view', async ({
+    page,
+  }) => {
     await page.goto('/admissions/enquiry')
 
-    const addressLink = page.locator('a[aria-label="Open DNKV location in Google Maps (opens in a new tab)"]').first()
+    const addressLink = page
+      .locator('a[aria-label="Open DNKV location in Google Maps (opens in a new tab)"]')
+      .first()
     await expect(addressLink).toBeVisible()
     expect(await addressLink.getAttribute('href')).toMatch(/maps\.app\.goo\.gl|google\.com\/maps/)
     expect(await addressLink.getAttribute('target')).toBe('_blank')
     expect(await addressLink.getAttribute('rel')).toContain('noopener')
     expect(await addressLink.getAttribute('rel')).toContain('noreferrer')
 
-    const directionsLink = page.locator('a[aria-label="Get directions to DNKV in Google Maps (opens in a new tab)"]').first()
+    const directionsLink = page
+      .locator('a[aria-label="Get directions to DNKV in Google Maps (opens in a new tab)"]')
+      .first()
     await expect(directionsLink).toBeVisible()
-    expect(await directionsLink.getAttribute('href')).toMatch(/^https:\/\/(www\.)?google\.com\/maps\/dir/)
+    expect(await directionsLink.getAttribute('href')).toMatch(
+      /^https:\/\/(www\.)?google\.com\/maps\/dir/,
+    )
 
     // Direct map iframe
     const mapIframe = page.locator('iframe[title="Dr. Netaji Karale Vidyalaya Campus Map"]').first()

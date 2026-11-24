@@ -32,9 +32,16 @@ const galleryItems = [
 
 export function GalleryPreview() {
   return (
-    <section className="py-16 md:py-24 bg-white border-b border-slate-200" aria-label="Campus Life Gallery">
+    <section
+      className="py-16 md:py-24 bg-white border-b border-slate-200"
+      aria-label="Campus Life Gallery"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <FadeContent direction="up" distance={14} className="flex flex-col md:flex-row md:items-end justify-between mb-12">
+        <FadeContent
+          direction="up"
+          distance={14}
+          className="flex flex-col md:flex-row md:items-end justify-between mb-12"
+        >
           <div>
             <span className="inline-block px-3 py-1 text-xs font-bold uppercase tracking-wider text-blue-900 bg-blue-100 rounded-full mb-3">
               Campus Moments
@@ -43,7 +50,8 @@ export function GalleryPreview() {
               Life at Dr. Netaji Karale Vidyalaya
             </h2>
             <p className="mt-2 text-slate-600 max-w-xl">
-              Glimpses of daily learning, science discoveries, annual sports day, and colorful community celebrations.
+              Glimpses of daily learning, science discoveries, annual sports day, and colorful
+              community celebrations.
             </p>
           </div>
 
@@ -64,7 +72,7 @@ export function GalleryPreview() {
               className={`group relative rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 min-h-[220px] p-6 flex flex-col justify-end bg-gradient-to-br ${item.gradient} text-white hover:scale-[1.02] ${item.aspect}`}
             >
               <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors" />
-              
+
               <div className="relative z-10">
                 <span className="inline-block px-2.5 py-1 rounded-md text-[11px] font-bold uppercase tracking-wider bg-white/20 backdrop-blur-md mb-2">
                   {item.category}

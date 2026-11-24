@@ -30,7 +30,8 @@ export default function AcademicsHubPage() {
             Academics at Dr. Netaji Karale Vidyalaya
           </h1>
           <p className="text-base md:text-xl text-slate-300 max-w-3xl">
-            A balanced learning environment fostering scientific inquiry, mathematical rigor, bilingual fluency, and holistic board examination success.
+            A balanced learning environment fostering scientific inquiry, mathematical rigor,
+            bilingual fluency, and holistic board examination success.
           </p>
         </div>
       </div>
@@ -45,7 +46,8 @@ export default function AcademicsHubPage() {
               </div>
               <h2 className="text-2xl font-bold text-slate-900 mb-3">Curriculum & Pedagogy</h2>
               <p className="text-sm text-slate-600 leading-relaxed mb-6">
-                Progressive learning paths aligned with Maharashtra State Board standards from Pre-Primary foundation through Secondary SSC preparation.
+                Progressive learning paths aligned with Maharashtra State Board standards from
+                Pre-Primary foundation through Secondary SSC preparation.
               </p>
               <div className="space-y-2 mb-8 text-xs text-slate-700">
                 <div className="flex items-center gap-2">
@@ -78,7 +80,8 @@ export default function AcademicsHubPage() {
               </div>
               <h2 className="text-2xl font-bold text-slate-900 mb-3">Academic Calendar</h2>
               <p className="text-sm text-slate-600 leading-relaxed mb-6">
-                Structured term schedules, unit test schedules, preliminary examination windows, annual festivals, and vacation periods.
+                Structured term schedules, unit test schedules, preliminary examination windows,
+                annual festivals, and vacation periods.
               </p>
               <div className="space-y-2 mb-8 text-xs text-slate-700">
                 <div className="flex items-center gap-2">
@@ -111,7 +114,8 @@ export default function AcademicsHubPage() {
               </div>
               <h2 className="text-2xl font-bold text-slate-900 mb-3">Board Results & Merit</h2>
               <p className="text-sm text-slate-600 leading-relaxed mb-6">
-                Consistent 99%+ SSC board pass percentages, distinction achievers honor roll, and subject merit awards.
+                Consistent 99%+ SSC board pass percentages, distinction achievers honor roll, and
+                subject merit awards.
               </p>
               <div className="space-y-2 mb-8 text-xs text-slate-700">
                 <div className="flex items-center gap-2">

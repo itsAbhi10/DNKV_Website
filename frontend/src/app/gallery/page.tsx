@@ -99,7 +99,8 @@ export default function GalleryPage() {
             Photo & Video Gallery
           </h1>
           <p className="text-base md:text-xl text-slate-300 max-w-3xl">
-            A visual chronicle of academic discovery, sports victories, cultural celebrations, and daily life at Dr. Netaji Karale Vidyalaya.
+            A visual chronicle of academic discovery, sports victories, cultural celebrations, and
+            daily life at Dr. Netaji Karale Vidyalaya.
           </p>
         </div>
       </div>
@@ -170,7 +171,8 @@ export default function GalleryPage() {
                 Experience DNKV in High Definition
               </h2>
               <p className="text-slate-300 text-sm leading-relaxed mb-6">
-                Watch our official campus showcase video featuring morning prayer assembly, hands-on science lab sessions, interactive computer classes, and sports coaching.
+                Watch our official campus showcase video featuring morning prayer assembly, hands-on
+                science lab sessions, interactive computer classes, and sports coaching.
               </p>
               <Link
                 href="/#video-tour"

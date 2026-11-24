@@ -327,7 +327,10 @@ export async function fetchCmsCollection<T>(
   }
 }
 
-export async function fetchPageBySlug(slug: string, locale: string = 'en'): Promise<PageDoc | null> {
+export async function fetchPageBySlug(
+  slug: string,
+  locale: string = 'en',
+): Promise<PageDoc | null> {
   try {
     const res = await fetch(
       `${BACKEND_URL}/api/pages?where[slug][equals]=${encodeURIComponent(slug)}&locale=${locale}&depth=2`,
@@ -388,45 +391,115 @@ export const defaultNavigation: NavigationGlobal = {
       label: 'About',
       url: '/about/school-story',
       subItems: [
-        { label: 'School Story', url: '/about/school-story', description: 'Founding vision, history, and legacy' },
-        { label: "Principal's Desk", url: '/about/principals-desk', description: 'Message and perspective from our Principal' },
-        { label: "President's Desk", url: '/about/presidents-desk', description: 'Governing board vision and guidance' },
-        { label: "Vice Principal's Desk", url: '/about/vice-principals-desk', description: 'Academic leadership and mentoring' },
-        { label: "Vice President's Desk", url: '/about/vice-presidents-desk', description: 'Institutional governance and support' },
-        { label: 'Recognition & Affiliation', url: '/about/recognition', description: 'Government approvals and school code' },
+        {
+          label: 'School Story',
+          url: '/about/school-story',
+          description: 'Founding vision, history, and legacy',
+        },
+        {
+          label: "Principal's Desk",
+          url: '/about/principals-desk',
+          description: 'Message and perspective from our Principal',
+        },
+        {
+          label: "President's Desk",
+          url: '/about/presidents-desk',
+          description: 'Governing board vision and guidance',
+        },
+        {
+          label: "Vice Principal's Desk",
+          url: '/about/vice-principals-desk',
+          description: 'Academic leadership and mentoring',
+        },
+        {
+          label: "Vice President's Desk",
+          url: '/about/vice-presidents-desk',
+          description: 'Institutional governance and support',
+        },
+        {
+          label: 'Recognition & Affiliation',
+          url: '/about/recognition',
+          description: 'Government approvals and school code',
+        },
       ],
     },
     {
       label: 'Academics',
       url: '/academics',
       subItems: [
-        { label: 'Curriculum & Approach', url: '/academics/curriculum', description: 'Nursery to Class X syllabus & pedagogy' },
-        { label: 'Academic Calendar', url: '/academics/calendar', description: 'Term dates, exams, and holidays' },
-        { label: 'Board Examination Results', url: '/academics/results', description: 'SSC Class X pass rate and toppers' },
+        {
+          label: 'Curriculum & Approach',
+          url: '/academics/curriculum',
+          description: 'Nursery to Class X syllabus & pedagogy',
+        },
+        {
+          label: 'Academic Calendar',
+          url: '/academics/calendar',
+          description: 'Term dates, exams, and holidays',
+        },
+        {
+          label: 'Board Examination Results',
+          url: '/academics/results',
+          description: 'SSC Class X pass rate and toppers',
+        },
       ],
     },
     {
       label: 'Facilities',
       url: '/facilities',
-      subItems: [{ label: 'Campus Overview', url: '/facilities', description: 'Labs, classrooms, grounds, and library' }],
+      subItems: [
+        {
+          label: 'Campus Overview',
+          url: '/facilities',
+          description: 'Labs, classrooms, grounds, and library',
+        },
+      ],
     },
     {
       label: 'Student Life',
       url: '/student-life/activities',
       subItems: [
-        { label: 'Co-Curriculars', url: '/student-life/activities', description: 'Debates, music, drama, science club' },
-        { label: 'Clubs & Societies', url: '/student-life/clubs', description: 'Eco-club, Scout & Guide, reading' },
-        { label: 'Annual Events', url: '/student-life/events', description: 'Sports day, gathering, celebrations' },
+        {
+          label: 'Co-Curriculars',
+          url: '/student-life/activities',
+          description: 'Debates, music, drama, science club',
+        },
+        {
+          label: 'Clubs & Societies',
+          url: '/student-life/clubs',
+          description: 'Eco-club, Scout & Guide, reading',
+        },
+        {
+          label: 'Annual Events',
+          url: '/student-life/events',
+          description: 'Sports day, gathering, celebrations',
+        },
       ],
     },
     {
       label: 'Admissions',
       url: '/admissions/process',
       subItems: [
-        { label: 'Admission Procedure', url: '/admissions/process', description: 'Step-by-step 2026-27 admission guide' },
-        { label: 'Fee Structure', url: '/admissions/fees', description: 'Approved fee slabs and schedule' },
-        { label: 'Required Documents', url: '/admissions/documents', description: 'Certificates and transfer paperwork' },
-        { label: 'Online Enquiry Form', url: '/admissions/enquiry', description: 'Apply or inquire online today' },
+        {
+          label: 'Admission Procedure',
+          url: '/admissions/process',
+          description: 'Step-by-step 2026-27 admission guide',
+        },
+        {
+          label: 'Fee Structure',
+          url: '/admissions/fees',
+          description: 'Approved fee slabs and schedule',
+        },
+        {
+          label: 'Required Documents',
+          url: '/admissions/documents',
+          description: 'Certificates and transfer paperwork',
+        },
+        {
+          label: 'Online Enquiry Form',
+          url: '/admissions/enquiry',
+          description: 'Apply or inquire online today',
+        },
       ],
     },
     { label: 'News & Notices', url: '/news-and-notices' },
@@ -647,7 +720,11 @@ export const fallbackFacilities: Facility[] = [
     category: 'academic',
     description:
       'Interactive displays, audio-visual educational modules, and multimedia content bringing complex concepts to life in Marathi and English.',
-    highlights: [{ text: 'Interactive digital displays' }, { text: 'Bilingual digital modules' }, { text: 'Well-ventilated learning spaces' }],
+    highlights: [
+      { text: 'Interactive digital displays' },
+      { text: 'Bilingual digital modules' },
+      { text: 'Well-ventilated learning spaces' },
+    ],
   },
   {
     id: 'fac-2',
@@ -655,7 +732,11 @@ export const fallbackFacilities: Facility[] = [
     category: 'science_tech',
     description:
       'Dedicated Physics, Chemistry, Biology labs with safety equipment, alongside a 40-workstation modern computer laboratory with internet access.',
-    highlights: [{ text: 'Dedicated Physics, Chemistry & Biology kits' }, { text: '40 modern PC workstations' }, { text: 'High-speed internet' }],
+    highlights: [
+      { text: 'Dedicated Physics, Chemistry & Biology kits' },
+      { text: '40 modern PC workstations' },
+      { text: 'High-speed internet' },
+    ],
   },
   {
     id: 'fac-3',
@@ -663,7 +744,11 @@ export const fallbackFacilities: Facility[] = [
     category: 'sports',
     description:
       'Expansive sports grounds supporting Kho-Kho, Kabaddi, Volleyball, Badminton, and athletic track events coached by qualified physical directors.',
-    highlights: [{ text: 'Kho-Kho & Kabaddi clay courts' }, { text: 'Volleyball court' }, { text: 'Annual district tournament venue' }],
+    highlights: [
+      { text: 'Kho-Kho & Kabaddi clay courts' },
+      { text: 'Volleyball court' },
+      { text: 'Annual district tournament venue' },
+    ],
   },
   {
     id: 'fac-4',
@@ -671,7 +756,11 @@ export const fallbackFacilities: Facility[] = [
     category: 'academic',
     description:
       'Vast collection of over 5,000 Marathi, Hindi, and English textbooks, reference guides, encyclopedias, competitive exam materials, and daily newspapers.',
-    highlights: [{ text: '5000+ curated volumes' }, { text: 'Devanagari literature collection' }, { text: 'Competitive exam prep corner' }],
+    highlights: [
+      { text: '5000+ curated volumes' },
+      { text: 'Devanagari literature collection' },
+      { text: 'Competitive exam prep corner' },
+    ],
   },
   {
     id: 'fac-5',
@@ -679,7 +768,11 @@ export const fallbackFacilities: Facility[] = [
     category: 'infrastructure',
     description:
       'Secure walled campus with CCTV surveillance, commercial reverse osmosis (RO) purified drinking water plants, clean sanitation blocks, and rural bus connectivity.',
-    highlights: [{ text: 'Multi-stage RO drinking water' }, { text: '24x7 CCTV coverage' }, { text: 'Dedicated student transportation' }],
+    highlights: [
+      { text: 'Multi-stage RO drinking water' },
+      { text: '24x7 CCTV coverage' },
+      { text: 'Dedicated student transportation' },
+    ],
   },
 ]
 

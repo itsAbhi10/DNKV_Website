@@ -112,7 +112,9 @@ export function LocationLinkView({
             <MapPin className="w-5 h-5" aria-hidden="true" />
           </div>
           <div className="flex-1 min-w-0">
-            <h4 className="text-xs font-bold text-slate-500 uppercase tracking-wider">Campus Location</h4>
+            <h4 className="text-xs font-bold text-slate-500 uppercase tracking-wider">
+              Campus Location
+            </h4>
             <a
               href={mapUrl}
               target="_blank"
@@ -209,13 +211,7 @@ export async function LocationLink(props: LocationLinkProps) {
     location = siteSettings.location
   }
 
-  return (
-    <LocationLinkView
-      {...props}
-      location={location}
-      siteSettings={siteSettings}
-    />
-  )
+  return <LocationLinkView {...props} location={location} siteSettings={siteSettings} />
 }
 
 export default LocationLink

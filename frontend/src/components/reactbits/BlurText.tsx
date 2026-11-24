@@ -13,7 +13,7 @@ interface BlurTextProps {
 /**
  * React Bits - BlurText Component
  * Word-level blur reveal designed specifically for hero headlines and LCP elements.
- * 
+ *
  * Rules honoured:
  * - Word-level splitting ONLY (preserves Devanagari ligatures and multi-script characters)
  * - LCP safety: Default state is fully visible in SSR HTML; no opacity:0 hidden text
@@ -21,12 +21,7 @@ interface BlurTextProps {
  * - Prefers-reduced-motion bypassed
  * - Screen-reader accessible
  */
-export function BlurText({
-  text,
-  className = '',
-  wordDelay = 65,
-  duration = 320,
-}: BlurTextProps) {
+export function BlurText({ text, className = '', wordDelay = 65, duration = 320 }: BlurTextProps) {
   const prefersReduced = useReducedMotion()
   const [mounted, setMounted] = useState(false)
 

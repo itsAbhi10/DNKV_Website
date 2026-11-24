@@ -20,7 +20,10 @@ export function ResultsHighlight({ stats, results }: ResultsHighlightProps) {
   const displayStats = stats && stats.length > 0 ? stats : defaultStats
 
   return (
-    <section className="py-16 md:py-24 bg-blue-950 text-white relative overflow-hidden" aria-label="Academic Achievements">
+    <section
+      className="py-16 md:py-24 bg-blue-950 text-white relative overflow-hidden"
+      aria-label="Academic Achievements"
+    >
       {/* Background patterns */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-900 via-blue-950 to-slate-950 opacity-90" />
       <div className="absolute right-0 top-1/2 -translate-y-1/2 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
@@ -34,7 +37,8 @@ export function ResultsHighlight({ stats, results }: ResultsHighlightProps) {
             Academic Board Excellence
           </h2>
           <p className="mt-3 text-slate-300 text-base md:text-lg">
-            Our students consistently excel in Maharashtra State Board examinations, sports tournaments, and district science exhibitions.
+            Our students consistently excel in Maharashtra State Board examinations, sports
+            tournaments, and district science exhibitions.
           </p>
         </div>
 
@@ -48,9 +52,7 @@ export function ResultsHighlight({ stats, results }: ResultsHighlightProps) {
               <div className="text-4xl md:text-5xl font-extrabold text-amber-400 mb-2 font-mono">
                 <StatCounter value={item.value} />
               </div>
-              <div className="text-xs md:text-sm font-medium text-slate-300">
-                {item.label}
-              </div>
+              <div className="text-xs md:text-sm font-medium text-slate-300">{item.label}</div>
             </div>
           ))}
         </div>

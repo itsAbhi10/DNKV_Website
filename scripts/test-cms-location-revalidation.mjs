@@ -42,14 +42,19 @@ async function testCmsLocationUpdate() {
     }),
   })
   const updateData = await updateRes.json()
-  console.log('   Update response village:', updateData.result?.location?.village || updateData.location?.village)
+  console.log(
+    '   Update response village:',
+    updateData.result?.location?.village || updateData.location?.village,
+  )
 
   // Verify updated
   const verifyRes = await fetch(`${BACKEND_URL}/api/globals/site-settings?locale=en`)
   const verifyData = await verifyRes.json()
   console.log('   Verified GET village:', verifyData.location?.village)
   if (verifyData.location?.village !== testVillage) {
-    throw new Error(`Expected village to be "${testVillage}", got "${verifyData.location?.village}"`)
+    throw new Error(
+      `Expected village to be "${testVillage}", got "${verifyData.location?.village}"`,
+    )
   }
   console.log('   ✓ Live backend updated without code change!')
 
@@ -68,14 +73,19 @@ async function testCmsLocationUpdate() {
     }),
   })
   const revertData = await revertRes.json()
-  console.log('   Reverted village:', revertData.result?.location?.village || revertData.location?.village)
+  console.log(
+    '   Reverted village:',
+    revertData.result?.location?.village || revertData.location?.village,
+  )
 
   // Verify reverted
   const finalRes = await fetch(`${BACKEND_URL}/api/globals/site-settings?locale=en`)
   const finalData = await finalRes.json()
   console.log('   Final GET village:', finalData.location?.village)
   if (finalData.location?.village !== originalVillage) {
-    throw new Error(`Expected village to be restored to "${originalVillage}", got "${finalData.location?.village}"`)
+    throw new Error(
+      `Expected village to be restored to "${originalVillage}", got "${finalData.location?.village}"`,
+    )
   }
   console.log('   ✓ Location cleanly restored!')
 }

@@ -18,7 +18,10 @@ export function PrincipalWelcome({
   readMoreLink,
 }: PrincipalWelcomeProps) {
   return (
-    <section className="py-16 md:py-24 bg-white border-b border-slate-200" aria-label="Principal Welcome">
+    <section
+      className="py-16 md:py-24 bg-white border-b border-slate-200"
+      aria-label="Principal Welcome"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Principal Image / Portrait Card */}
@@ -26,7 +29,7 @@ export function PrincipalWelcome({
             <div className="relative mx-auto max-w-md lg:max-w-none">
               {/* Background decorative frame */}
               <div className="absolute -inset-4 rounded-3xl bg-gradient-to-tr from-blue-900 to-amber-500 opacity-15 blur-lg"></div>
-              
+
               <div className="relative rounded-2xl overflow-hidden bg-slate-900 shadow-2xl border-4 border-white aspect-[4/5] flex flex-col justify-end p-8 text-white">
                 {/* Fallback portrait background pattern */}
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/60 to-transparent z-10" />
@@ -35,7 +38,9 @@ export function PrincipalWelcome({
                     <div className="w-28 h-28 mx-auto rounded-full bg-amber-500/20 border-2 border-amber-400 flex items-center justify-center text-amber-300 text-3xl font-bold mb-4 shadow-inner">
                       DNKV
                     </div>
-                    <span className="text-xs uppercase tracking-widest text-slate-300 font-medium">Leadership & Mentorship</span>
+                    <span className="text-xs uppercase tracking-widest text-slate-300 font-medium">
+                      Leadership & Mentorship
+                    </span>
                   </div>
                 </div>
 
@@ -67,7 +72,8 @@ export function PrincipalWelcome({
             </h2>
 
             <div className="relative pl-6 border-l-4 border-amber-500 mb-8 italic text-slate-700 text-lg md:text-xl font-serif leading-relaxed">
-              &ldquo;Education in rural Maharashtra is not merely the transmission of textbook facts; it is the ignition of ambition, self-belief, and moral fortitude.&rdquo;
+              &ldquo;Education in rural Maharashtra is not merely the transmission of textbook
+              facts; it is the ignition of ambition, self-belief, and moral fortitude.&rdquo;
             </div>
 
             <p className="text-slate-600 leading-relaxed text-base md:text-lg mb-6">

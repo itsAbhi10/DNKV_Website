@@ -10,11 +10,7 @@ import {
   BarChart3,
   ArrowRight,
 } from 'lucide-react'
-import {
-  fetchCmsCollection,
-  fallbackResults,
-  type ResultDoc,
-} from '../../../lib/cms'
+import { fetchCmsCollection, fallbackResults, type ResultDoc } from '../../../lib/cms'
 import { StatCounter } from '../../../components/reactbits/StatCounter'
 
 export const metadata = {
@@ -35,8 +31,7 @@ export default async function ResultsPage() {
     sort: '-academicYear',
     limit: '5',
   })
-  const latestResult =
-    cmsResultsRes.docs.length > 0 ? cmsResultsRes.docs[0] : fallbackResults
+  const latestResult = cmsResultsRes.docs.length > 0 ? cmsResultsRes.docs[0] : fallbackResults
 
   return (
     <div className="min-h-screen bg-slate-50">
@@ -51,7 +46,8 @@ export default async function ResultsPage() {
             SSC Board Examination Results
           </h1>
           <p className="text-base md:text-xl text-slate-300 max-w-3xl">
-            Celebrating our students&rsquo; consistent academic milestones in Maharashtra State Board examinations, backed by rigorous coaching and student dedication.
+            Celebrating our students&rsquo; consistent academic milestones in Maharashtra State
+            Board examinations, backed by rigorous coaching and student dedication.
           </p>
         </div>
       </div>
@@ -81,7 +77,9 @@ export default async function ResultsPage() {
               <div className="text-4xl font-black text-blue-900 font-mono">
                 <StatCounter value={`${latestResult.passPercentage}%`} />
               </div>
-              <div className="text-xs font-semibold text-slate-600 mt-1">Overall Pass Percentage</div>
+              <div className="text-xs font-semibold text-slate-600 mt-1">
+                Overall Pass Percentage
+              </div>
             </div>
 
             <div className="p-6 rounded-2xl bg-amber-50/60 border border-amber-100">
@@ -99,10 +97,10 @@ export default async function ResultsPage() {
             </div>
 
             <div className="p-6 rounded-2xl bg-purple-50/60 border border-purple-100">
-              <div className="text-4xl font-black text-purple-700 font-mono">
-                100%
+              <div className="text-4xl font-black text-purple-700 font-mono">100%</div>
+              <div className="text-xs font-semibold text-slate-600 mt-1">
+                Science & Maths Pass Rate
               </div>
-              <div className="text-xs font-semibold text-slate-600 mt-1">Science & Maths Pass Rate</div>
             </div>
           </div>
 
@@ -149,7 +147,9 @@ export default async function ResultsPage() {
         <div className="bg-white rounded-3xl p-8 md:p-12 border border-slate-200/80 shadow-xs mb-12">
           <div className="flex items-center gap-3 mb-6">
             <BarChart3 className="w-6 h-6 text-blue-900" />
-            <h3 className="text-2xl font-bold text-slate-900">Historical Board Performance (Multi-Year)</h3>
+            <h3 className="text-2xl font-bold text-slate-900">
+              Historical Board Performance (Multi-Year)
+            </h3>
           </div>
 
           <div className="overflow-x-auto rounded-2xl border border-slate-200">
@@ -169,7 +169,9 @@ export default async function ResultsPage() {
                     <td className="p-4 font-bold text-slate-900 font-mono">{row.year}</td>
                     <td className="p-4 font-mono font-bold text-emerald-700">{row.passRate}</td>
                     <td className="p-4 text-slate-600">{row.students} Students</td>
-                    <td className="p-4 text-slate-600 font-semibold">{row.distinctions} Achievers</td>
+                    <td className="p-4 text-slate-600 font-semibold">
+                      {row.distinctions} Achievers
+                    </td>
                     <td className="p-4">
                       <span className="px-2.5 py-1 rounded-md text-xs font-semibold bg-emerald-100 text-emerald-800">
                         Board Certified
@@ -184,7 +186,9 @@ export default async function ResultsPage() {
 
         {/* DPDP Legal Note */}
         <div className="text-center text-xs text-slate-500 max-w-2xl mx-auto">
-          Under the Digital Personal Data Protection Act 2023 of India, student academic honors and names are presented with recorded parental/guardian consent. For data inquiries or updates, contact dnkvchinchgaon@gmail.com.
+          Under the Digital Personal Data Protection Act 2023 of India, student academic honors and
+          names are presented with recorded parental/guardian consent. For data inquiries or
+          updates, contact dnkvchinchgaon@gmail.com.
         </div>
       </div>
     </div>

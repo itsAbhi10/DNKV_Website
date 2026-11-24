@@ -10,7 +10,10 @@ interface NoticesAndNewsProps {
 
 export function NoticesAndNews({ notices, news }: NoticesAndNewsProps) {
   return (
-    <section className="py-16 md:py-24 bg-white border-b border-slate-200" aria-label="Notices and News">
+    <section
+      className="py-16 md:py-24 bg-white border-b border-slate-200"
+      aria-label="Notices and News"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           {/* Column 1: Official Notices & Circulars (5 cols) */}
@@ -37,7 +40,11 @@ export function NoticesAndNews({ notices, news }: NoticesAndNewsProps) {
                     className="p-4 rounded-xl bg-slate-50 border border-slate-200/80 hover:border-blue-400 hover:bg-blue-50/30 transition-all flex items-start gap-4"
                   >
                     <div className="p-2.5 rounded-lg bg-blue-100 text-blue-900 flex-shrink-0 mt-0.5">
-                      {notice.isPinned ? <Pin className="w-4 h-4 text-amber-600" /> : <FileText className="w-4 h-4" />}
+                      {notice.isPinned ? (
+                        <Pin className="w-4 h-4 text-amber-600" />
+                      ) : (
+                        <FileText className="w-4 h-4" />
+                      )}
                     </div>
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2 mb-1">

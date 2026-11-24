@@ -7,9 +7,7 @@ const BACKEND_URL = process.env.BACKEND_URL || 'http://localhost:3001'
 const EnquirySchema = z.object({
   studentName: z.string().min(2, 'Student name must have at least 2 characters'),
   parentName: z.string().min(2, 'Parent/Guardian name must have at least 2 characters'),
-  phone: z
-    .string()
-    .regex(/^[6-9]\d{9}$/, 'Please enter a valid 10-digit Indian mobile number'),
+  phone: z.string().regex(/^[6-9]\d{9}$/, 'Please enter a valid 10-digit Indian mobile number'),
   email: z.string().email('Please enter a valid email address').optional().or(z.literal('')),
   applyingForClass: z.string().min(1, 'Please select the class applying for'),
   villageOrTown: z.string().min(2, 'Please enter your village or town'),

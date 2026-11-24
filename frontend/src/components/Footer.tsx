@@ -57,7 +57,8 @@ export function Footer({ footer, siteSettings }: FooterProps) {
               <div>
                 <h2 className="text-xl font-extrabold text-white tracking-tight">{schoolName}</h2>
                 <p className="text-xs text-amber-400 font-semibold uppercase tracking-wider">
-                  {siteSettings?.location?.village || 'Chinchgaon, Akulgaon'} • {siteSettings?.location?.district || 'Solapur'}
+                  {siteSettings?.location?.village || 'Chinchgaon, Akulgaon'} •{' '}
+                  {siteSettings?.location?.district || 'Solapur'}
                 </p>
               </div>
             </div>

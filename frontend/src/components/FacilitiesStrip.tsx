@@ -17,9 +17,16 @@ const facilityIcons: Record<string, any> = {
 
 export function FacilitiesStrip({ facilities }: FacilitiesStripProps) {
   return (
-    <section className="py-16 md:py-24 bg-slate-50 border-b border-slate-200" aria-label="Campus Facilities">
+    <section
+      className="py-16 md:py-24 bg-slate-50 border-b border-slate-200"
+      aria-label="Campus Facilities"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <FadeContent direction="up" distance={14} className="flex flex-col md:flex-row md:items-end justify-between mb-12">
+        <FadeContent
+          direction="up"
+          distance={14}
+          className="flex flex-col md:flex-row md:items-end justify-between mb-12"
+        >
           <div>
             <span className="inline-block px-3 py-1 text-xs font-bold uppercase tracking-wider text-amber-700 bg-amber-100 rounded-full mb-3">
               Campus Environment
@@ -28,7 +35,8 @@ export function FacilitiesStrip({ facilities }: FacilitiesStripProps) {
               State-of-the-Art Infrastructure
             </h2>
             <p className="mt-2 text-slate-600 max-w-xl">
-              Equipped with modern laboratories, smart classrooms, athletic fields, and a comprehensive library for complete development.
+              Equipped with modern laboratories, smart classrooms, athletic fields, and a
+              comprehensive library for complete development.
             </p>
           </div>
 
@@ -53,17 +61,16 @@ export function FacilitiesStrip({ facilities }: FacilitiesStripProps) {
                   <div className="w-12 h-12 rounded-xl bg-amber-50 border border-amber-200 text-amber-700 flex items-center justify-center mb-5">
                     <Icon className="w-6 h-6" />
                   </div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-2">
-                    {fac.title}
-                  </h3>
-                  <p className="text-sm text-slate-600 leading-relaxed mb-6">
-                    {fac.description}
-                  </p>
-                  
+                  <h3 className="text-xl font-bold text-slate-900 mb-2">{fac.title}</h3>
+                  <p className="text-sm text-slate-600 leading-relaxed mb-6">{fac.description}</p>
+
                   {fac.highlights && fac.highlights.length > 0 && (
                     <ul className="space-y-2 mb-6">
                       {fac.highlights.map((h, i) => (
-                        <li key={i} className="flex items-center gap-2 text-xs font-medium text-slate-700">
+                        <li
+                          key={i}
+                          className="flex items-center gap-2 text-xs font-medium text-slate-700"
+                        >
                           <CheckCircle className="w-4 h-4 text-emerald-600 flex-shrink-0" />
                           <span>{h.text}</span>
                         </li>

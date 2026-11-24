@@ -1,11 +1,5 @@
 import React from 'react'
-import {
-  Phone,
-  Mail,
-  Clock,
-  Navigation,
-  School,
-} from 'lucide-react'
+import { Phone, Mail, Clock, Navigation, School } from 'lucide-react'
 import { MailboxLink } from '../../components/MailboxLink'
 import { LocationLink } from '../../components/location-link'
 import { InteractiveMapPreview } from '../../components/InteractiveMapPreview'
@@ -39,7 +33,8 @@ export default async function ContactPage() {
             Contact Dr. Netaji Karale Vidyalaya
           </h1>
           <p className="text-base md:text-xl text-slate-300 max-w-3xl">
-            We welcome visits, queries, and dialogues from parents, alumni, and community members. Reach out via phone, email, or visit our campus.
+            We welcome visits, queries, and dialogues from parents, alumni, and community members.
+            Reach out via phone, email, or visit our campus.
           </p>
         </div>
       </div>
@@ -53,11 +48,7 @@ export default async function ContactPage() {
 
               <div className="space-y-6">
                 {/* Dynamic Clickable Location Link */}
-                <LocationLink
-                  location={location}
-                  siteSettings={siteSettings}
-                  variant="card"
-                />
+                <LocationLink location={location} siteSettings={siteSettings} variant="card" />
 
                 {/* Phone */}
                 <div className="flex items-start gap-4">
@@ -65,7 +56,9 @@ export default async function ContactPage() {
                     <Phone className="w-6 h-6" />
                   </div>
                   <div>
-                    <h3 className="text-xs font-bold text-slate-500 uppercase tracking-wider">Helpline & WhatsApp</h3>
+                    <h3 className="text-xs font-bold text-slate-500 uppercase tracking-wider">
+                      Helpline & WhatsApp
+                    </h3>
                     <a
                       href={`tel:${phone.replace(/\s+/g, '')}`}
                       className="block text-base font-bold text-slate-900 hover:text-blue-900 font-mono mt-1 min-h-[44px] flex items-center"
@@ -82,7 +75,9 @@ export default async function ContactPage() {
                     <Mail className="w-6 h-6" />
                   </div>
                   <div>
-                    <h3 className="text-xs font-bold text-slate-500 uppercase tracking-wider">Official Email</h3>
+                    <h3 className="text-xs font-bold text-slate-500 uppercase tracking-wider">
+                      Official Email
+                    </h3>
                     <MailboxLink
                       email={email}
                       subject="General / School Inquiry - Dr. Netaji Karale Vidyalaya"
@@ -100,11 +95,13 @@ export default async function ContactPage() {
                     <Clock className="w-6 h-6" />
                   </div>
                   <div>
-                    <h3 className="text-xs font-bold text-slate-500 uppercase tracking-wider">Office Hours</h3>
-                    <p className="text-sm font-semibold text-slate-900 mt-1">
-                      {officeHours}
-                    </p>
-                    <span className="text-xs text-slate-500">Closed on Sundays and State Gazetted Holidays</span>
+                    <h3 className="text-xs font-bold text-slate-500 uppercase tracking-wider">
+                      Office Hours
+                    </h3>
+                    <p className="text-sm font-semibold text-slate-900 mt-1">{officeHours}</p>
+                    <span className="text-xs text-slate-500">
+                      Closed on Sundays and State Gazetted Holidays
+                    </span>
                   </div>
                 </div>
               </div>
@@ -117,7 +114,9 @@ export default async function ContactPage() {
                 <span>Transit & Directions</span>
               </div>
               <p className="text-xs text-slate-300 leading-relaxed">
-                The school campus is situated on the Akulgaon-Chinchgaon Road in Madha Taluka. Accessible by state transport (MSRTC) buses and local connecting transport from Kurduvadi and Madha.
+                The school campus is situated on the Akulgaon-Chinchgaon Road in Madha Taluka.
+                Accessible by state transport (MSRTC) buses and local connecting transport from
+                Kurduvadi and Madha.
               </p>
             </div>
           </div>
