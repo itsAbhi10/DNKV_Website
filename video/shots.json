@@ -1,0 +1,50 @@
+[
+  {
+    "id": "arrival",
+    "filename": "arrival.jpg",
+    "title": "School Front at Sunrise",
+    "prompt": "Slow cinematic push-in on Dr. Netaji Karale Vidyalaya school building entrance, soft golden morning light, serene rural environment, realistic, no text, no logos, no close-up faces",
+    "seconds": 3.5,
+    "zoompan": "zoom+0.0015:x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)'"
+  },
+  {
+    "id": "corridor",
+    "filename": "corridor.jpg",
+    "title": "Sunlit Corridor Glide",
+    "prompt": "Smooth forward glide through sunlit school corridor, warm shadows, clean arches, peaceful morning ambiance, realistic, no text, no logos",
+    "seconds": 3.5,
+    "zoompan": "zoom+0.0012:x='(iw-iw/zoom)*(on/88)':y='ih/2-(ih/zoom/2)'"
+  },
+  {
+    "id": "classroom",
+    "filename": "classroom.jpg",
+    "title": "Classroom Learning Pan",
+    "prompt": "Slow gentle pan across disciplined classroom, students viewed respectfully from behind at wooden desks, natural window light, realistic, no close-up faces",
+    "seconds": 3.5,
+    "zoompan": "zoom+0.001:x='(iw-iw/zoom)*(1-on/88)':y='ih/2-(ih/zoom/2)'"
+  },
+  {
+    "id": "hands",
+    "filename": "hands.jpg",
+    "title": "Close-up Writing & Focus Pull",
+    "prompt": "Cinematic close-up of student hand writing in notebook, pen tip gliding smoothly, warm soft bokeh background, focus pull, realistic, no faces",
+    "seconds": 3.5,
+    "zoompan": "zoom+0.0018:x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)'"
+  },
+  {
+    "id": "sports",
+    "filename": "sports.jpg",
+    "title": "Sports Ground at Late Afternoon",
+    "prompt": "Wide angle view of expansive sports playground, late afternoon golden hour sky, athletic tracks, trees in background, realistic, steady cinematic shot",
+    "seconds": 3.5,
+    "zoompan": "zoom+0.0012:x='(iw-iw/zoom)*(on/88)':y='ih/2-(ih/zoom/2)'"
+  },
+  {
+    "id": "closing",
+    "filename": "closing.jpg",
+    "title": "Campus Panorama & Pull Back",
+    "prompt": "Slow pull-back wide shot of school campus at golden hour sunset, trees and open sky, majestic educational sanctuary, seamless loop transition, realistic, no text, no logos",
+    "seconds": 3.5,
+    "zoompan": "zoom+0.001:x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)'"
+  }
+]

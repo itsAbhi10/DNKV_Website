@@ -1,0 +1,50 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Build Outputs
+.next/
+out/
+build/
+dist/
+*.tsbuildinfo
+
+# Testing & Coverage
+coverage/
+test-results/
+playwright-report/
+
+# Payload CMS
+.payload/
+
+# Database local storage
+.db-data/
+*.db
+*.sqlite
+
+# Environment variables
+.env
+.env.*
+!.env.example
+backend/.env
+frontend/.env
+
+# Large Media & Source Assets
+backend/media/
+backend/video/clips/
+backend/video/source-photos/
+*.mp4
+*.mov
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# OS & Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
